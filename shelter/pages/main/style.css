@@ -919,3 +919,49 @@ li {
     line-height: 18px;
     color: #B2B2B2;
 }
+.footer{
+    width: 1280px;
+    height: 350px;
+    background: url(../../assets/images/noise_transparent.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
+    padding-top: 40px;
+}
+.footer_wrapper{
+    width: 1280px;
+    height: 350px;
+    margin: 0px auto;
+}
+.footer__conteiner{
+    width: 1200px;
+    height: 310px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.footer__contacts{
+    width: 279px;
+    height: 234px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+.footer__location{
+    width: 302px;
+    height: 234px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+.footer__puppy{
+    width: 300px;
+    height: 310px;
+}
+.footer__email, .footer__phone, .footer__location_1, .footer__location_2 {
+    display: flex;
+    align-items: center;
+}
+.footer__img{
+    margin-right: 20px;
+}
