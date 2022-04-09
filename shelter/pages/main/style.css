@@ -585,13 +585,7 @@ h5{
     margin-right: 35px;
 }
 .header__nav_item:first-child{
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 160%;
-    color: #FAFAFA;
-    border-bottom:solid #F1CDB3;;
+    border-bottom:solid #F1CDB3;
 }
 .header__nav_item:last-child{
     margin-right: 0px;
@@ -605,6 +599,9 @@ h5{
     line-height: 160%;
     color: #CDCDCD;
     text-decoration: none;
+}
+.link_default{
+    color: #FAFAFA;
 }
 li {
   list-style-type: none;
