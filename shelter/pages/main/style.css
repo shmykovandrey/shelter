@@ -520,6 +520,15 @@ h4{
     letter-spacing: 0.06em;
     color: #545454;
 }
+h5{
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
 .firts__screen{
     width: 1280px;
     height: 908px;
@@ -849,4 +858,64 @@ li {
 }
 .help__items_text{
     margin-top: 25px;
+}
+.donations{
+    height: 462px;
+    width: 1280px;
+    background-color: #F6F6F6;
+}
+.wrapper__dontaion{
+    width: 1200px;
+    height: 462px;
+    margin: 0px auto;
+    padding-top: 80px;
+}
+.donation__content{
+    height: 282px;
+    width: 915px;
+    margin: 0px auto;
+    display: flex;
+}
+.donation__image_content{
+    width: 505px;
+    height: 261px;
+    margin-top: 11px;
+}
+.donation__text_content{
+    width: 380px;
+    height: 282px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+.donation__text_header{
+    width: 300px;
+    height: 90px;
+}
+.donation__text{
+    width: 308px;
+    height: 17px;
+
+}
+.dontaion__card_information{
+    width: 349px;
+    height: 43px;
+    background: #F1CDB3;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.donation_description{
+    width: 380px;
+    height: 72px;
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
 }
