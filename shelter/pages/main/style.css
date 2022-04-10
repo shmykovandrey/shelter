@@ -808,6 +808,9 @@ li {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5);
 }
+.slider__pet_card:hover .slider__pet_pic{
+    opacity: 10%;
+}
 
 .slider__pet_card:hover .slider__pets_btn{
     background-color: #F1CDB3;
