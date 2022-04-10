@@ -592,10 +592,6 @@ h5{
     display: flex;
     justify-content: space-between;
 }
-
-.header__nav_item:first-child{
-    border-bottom:solid #F1CDB3;
-}
 .header__nav_link{
     font-family: 'Arial';
     font-style: normal;
@@ -605,11 +601,21 @@ h5{
     color: #CDCDCD;
     text-decoration: none;
 }
-.link_default{
+.default_link{
     color: #FAFAFA;
+
+}
+.default_nav{
+    border-bottom:solid #F1CDB3;
 }
 li {
   list-style-type: none;
+}
+.hover_nav:hover{
+    border-bottom:solid #F1CDB3;
+}
+.hover_link:hover{
+    color: #FAFAFA;
 }
 
 .wrapper__first_screen__content{
