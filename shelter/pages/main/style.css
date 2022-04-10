@@ -559,7 +559,9 @@ h5{
     flex-direction: column;
     justify-content: space-between;
 }
-
+.header__logo_link{
+    text-decoration: none;
+}
 .main__logo {
     width: 189px;
     font-family: 'Georgia';
