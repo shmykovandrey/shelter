@@ -500,6 +500,10 @@ body{
     margin: 0px auto;
     background-color: #413228;
 }
+h1{
+    margin: 0px;
+}
+
 h3{
     /* h3 */
     font-family: 'Georgia';
@@ -573,24 +577,23 @@ h5{
     font-weight: 400;
     font-size: 13px;
     line-height: 15px;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.1em;
     color: #FFFFFF;
+    text-align: center;
+}
+.main__header_nav{
+    width: 443px;
+    height: 27px;
+    padding-top: 16px;
 }
 .header__nav_list{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
 }
-.header__nav_item{
-    margin-top: 16px;
-    margin-right: 35px;
-}
+
 .header__nav_item:first-child{
     border-bottom:solid #F1CDB3;
 }
-.header__nav_item:last-child{
-    margin-right: 0px;
-}
-
 .header__nav_link{
     font-family: 'Arial';
     font-style: normal;
