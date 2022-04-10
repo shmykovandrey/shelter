@@ -535,13 +535,14 @@ h5{
   height: 120px;
   margin: 0 auto;
   background-color: #fff;
+  position: fixed;
+  top: 0px;
 }
 .header__wrapper{
   width: 1280px;
   height: 120px;
   margin: 0 auto;
   padding-top: 30px;
-  background-color: black;
 }
 .header__content{
   width: 1200px;
@@ -557,6 +558,9 @@ h5{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+.logo_link{
+  text-decoration: none;
 }
 .header__logo_h1{
   margin: 0;
@@ -580,15 +584,17 @@ h5{
 .header__nav{
   width: 443px;
   height: 27px;
-  margin-top: 14px;
+  margin-top: 16px;
 }
 .header__nav_list{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
 }
-.header__nav_item:nth-child(2){
+.header__item_default{
+  border-bottom: solid #F1CDB3;
+}
+.header__item_nodefault:hover{
   border-bottom: solid #F1CDB3;
 }
 li {
@@ -603,19 +609,23 @@ li {
   color: #545454;
   text-decoration: none;
 }
+.header__nav_link:hover{
+  color: #292929;
+}
 .link_default{
-  color: #292929;;
+  color: #292929;
 }
 .main{
   width: 1280px;
   height: 1342px;
   background-color: #F6F6F6;
+  margin-top: 120px;
   padding-top: 80px;
 }
 .main__wrapper{
   width: 1200px;
-  height: 1342px;
   margin: 0 auto;
+  background-color: #F6F6F6;
 }
 .pets__content{
   width: 1200px;
@@ -645,6 +655,19 @@ li {
   flex-direction: column;
   align-items: center;
 }
+.pets__card:hover{
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.5);
+}
+.pets__card:hover .pets_image{
+  opacity:10%;
+}
+.pets__card:hover .pets_learn_more{
+  background-color: #FDDCC4;
+}
+.pets_learn_more:hover{
+  cursor: pointer;
+}
 .pets_image{
   width: 270px;
   height: 270px;
@@ -668,7 +691,7 @@ li {
   border-radius: 100px;
   text-align: center;
   margin-top: 30px;
-  padding-top: 15px;
+  background-color: #fff;
 }
 .pets_learn_more_btn{
   font-family: 'Georgia';
@@ -691,9 +714,28 @@ li {
 .pets_pagination_btn{
   width: 52px;
   height: 52px;
-  border: 2px solid #CDCDCD;
   border-radius: 100px;
   text-align: center;
+  border: 2px solid #F1CDB3;
+  background-color: #F6F6F6;
+}
+.pets_pagination_btn_en:hover {
+  background-color: #F1CDB3;
+}
+.pets_pagination_btn:disabled{
+  border: 2px solid #CDCDCD;
+}
+.pets_pagination_btn:disabled .pets_pag_link{
+   pointer-events: none;
+   cursor: default;
+}
+.is_page{
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+  text-align: center;
+  border: 2px solid #F1CDB3;
+  background-color: #F1CDB3;
   padding-top: 12px;
 }
 .pets_pag_link{
@@ -705,9 +747,7 @@ li {
   letter-spacing: 0.06em;
   color: #292929;
   text-decoration: none;
-}
-.next_page, .last_page{
-  border: 2px solid #F1CDB3;
+
 }
 .is_page{
   border: 2px solid #F1CDB3;
@@ -717,7 +757,7 @@ li {
     width: 1280px;
     height: 350px;
     background: url(../../assets/images/noise_transparent.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
-    padding-top: 40px;
+    padding-top: 41px;
 }
 .footer_wrapper{
     width: 1280px;
@@ -751,6 +791,11 @@ li {
 .footer__puppy{
     width: 300px;
     height: 310px;
+}
+.footer_link{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 .footer__email, .footer__phone, .footer__location_1, .footer__location_2 {
     display: flex;

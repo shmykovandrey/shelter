@@ -603,7 +603,6 @@ h5{
 }
 .default_link{
     color: #FAFAFA;
-
 }
 .default_nav{
     border-bottom:solid #F1CDB3;
@@ -617,7 +616,6 @@ li {
 .hover_link:hover{
     color: #FAFAFA;
 }
-
 .wrapper__first_screen__content{
     width: 1200px;
     height: 728px;
@@ -808,7 +806,7 @@ li {
 }
 .slider__pet_card:hover{
     cursor: pointer;
-    background: rgba(41, 41, 41, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .slider__pet_card:hover .slider__pets_btn{
