@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include media-laptop{
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }
 
 .logo{
@@ -10,6 +14,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    @include media-laptop{
+        padding-top: 30px;
+    }
 }
 
 .logo__subText{
@@ -27,6 +34,9 @@
 .main-nav{
     padding-top: 55px;
     max-width: 443px;
+    @include media-laptop{
+        padding-top: 46px;
+    }
 }
 
 .main-nav__items{

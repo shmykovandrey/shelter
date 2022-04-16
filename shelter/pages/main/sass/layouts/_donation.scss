@@ -7,6 +7,10 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
+    @include media-laptop{
+        flex-direction: column;
+        
+    }
 
 }
 .donation-content_text{

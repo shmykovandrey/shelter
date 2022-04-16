@@ -14,11 +14,19 @@
     align-items: flex-start;
     text-align: center;
     gap: 8.8rem;
+    @include media-laptop{
+        gap: 4rem;
+    }
 
 }
 
 .pets__card{
     background-color: $color_backgroundLight;
+    @include media-laptop{
+        &:last-child{
+            display: none;
+        }
+    }
 }
 
 .pets__name{

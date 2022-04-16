@@ -4,10 +4,17 @@
     display: flex;
     justify-content: space-between;
     align-items: space-between;
+    @include media-laptop{
+        flex-direction: column-reverse;
+        padding: 80px 140px 100px;
+    }
 }
 .about-content_image{
     display: block;
     max-width: 300px;
+    @include media-laptop{
+        margin: 80px 63px 0px;
+    }
 }
 .about-content_text{
     padding: 14px 0px;
@@ -16,4 +23,13 @@
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
+    @include media-laptop{
+        padding: 0px;
+    }
+}
+
+@include media-laptop{
+    .about-content_p{
+        margin-top: 25px;
+    }
 }
