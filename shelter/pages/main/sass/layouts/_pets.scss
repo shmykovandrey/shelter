@@ -1,0 +1,41 @@
+.pets_h3{
+    padding-top: 80px;
+    text-align: center;
+}
+.pets__slider{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 60px;
+}
+.pets__cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+    gap: 8.8rem;
+
+}
+
+.pets__card{
+    background-color: $color_backgroundLight;
+}
+
+.pets__name{
+    padding-top: 25px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.0rem;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    padding-bottom: 30px;
+}
+.pets__button_standart{
+    margin-bottom: 30px;
+}
+.pets__button{
+    display: block;
+    margin: 60px auto 0px; 
+}

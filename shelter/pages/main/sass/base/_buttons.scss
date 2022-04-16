@@ -1,0 +1,17 @@
+.button-standart{
+    padding: 15px 45px;
+    background-color: $color_btnPrimary;
+    border-radius: 100px;
+    &:hover {
+        cursor: pointer;
+        background-color: $color_btnColorPrimaryLight;
+    }
+}
+
+.button__round{
+    height: 52px;
+    width: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    background-color: #F6F6F6;
+}

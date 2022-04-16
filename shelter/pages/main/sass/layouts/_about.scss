@@ -1,0 +1,19 @@
+
+.about-content{
+    padding: 80px 175px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+}
+.about-content_image{
+    display: block;
+    max-width: 300px;
+}
+.about-content_text{
+    padding: 14px 0px;
+    max-width: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
