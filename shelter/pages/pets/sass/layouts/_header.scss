@@ -1,7 +1,9 @@
 .header{
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 30px;
     @include media-laptop{
         justify-content: space-between;
         align-items: flex-start;
@@ -9,7 +11,7 @@
 }
 
 .logo{
-    padding-top: 60px;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,11 +31,11 @@
     display: flex;
     align-items: center;
     letter-spacing: 0.1em;
-    color: #FFFFFF;
+    color: #292929;
 }
 .main-nav{
-    padding-top: 55px;
-    max-width: 444px;
+    padding-top: 27px;
+    max-width: 446px;
     height: 100%;
     @include media-laptop{
         padding-top: 46px;
@@ -59,15 +61,15 @@
     font-size: 1.5rem;
     line-height: 160%;
     letter-spacing: 0;
-    color: #CDCDCD;
+    color: #545454;
     white-space: nowrap;
     &:hover{
-        color: #FAFAFA;
+        color: #292929;
     }
 }
 
 .main-nav_link_default{
-    color: #FAFAFA;
+    color: #292929;
     border-bottom: solid $color_btnPrimary;
     padding-bottom: 4px;
 }
