@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include media-laptop{
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }
 
 .logo{
@@ -10,6 +14,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    @include media-laptop{
+        padding-top: 30px;
+    }
 }
 
 .logo__subText{
@@ -26,11 +33,19 @@
 }
 .main-nav{
     padding-top: 55px;
-    max-width: 443px;
+    max-width: 444px;
+    height: 100%;
+    @include media-laptop{
+        padding-top: 46px;
+    }
+    @include media-mobile{
+            display: none;
+    }
 }
 
 .main-nav__items{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
@@ -46,6 +61,9 @@
     letter-spacing: 0;
     color: #CDCDCD;
     white-space: nowrap;
+    &:hover{
+        color: #FAFAFA;
+    }
 }
 
 .main-nav_link_default{

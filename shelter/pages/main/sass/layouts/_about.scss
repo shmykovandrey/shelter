@@ -16,6 +16,7 @@
 .about-content_image{
     display: block;
     max-width: 300px;
+    height: 100%;
     @include media-laptop{
         margin: 80px 63px 0px;
     }
@@ -28,15 +29,20 @@
 .about-content_text{
     padding: 14px 0px;
     max-width: 430px;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
+    p{
+        margin-top: 24px;
+    }
     @include media-laptop{
         padding: 0px;
     }
     @include media-mobile{
-        width: 270px;
+        max-width: 270px;
+        height: 100%;
         margin-left: 15px;
         p{
             text-align: justify

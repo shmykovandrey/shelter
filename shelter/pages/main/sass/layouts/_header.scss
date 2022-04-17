@@ -33,17 +33,19 @@
 }
 .main-nav{
     padding-top: 55px;
-    max-width: 443px;
+    max-width: 444px;
+    height: 100%;
     @include media-laptop{
         padding-top: 46px;
     }
     @include media-mobile{
-        display: none;
+            display: none;
     }
 }
 
 .main-nav__items{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
@@ -59,6 +61,9 @@
     letter-spacing: 0;
     color: #CDCDCD;
     white-space: nowrap;
+    &:hover{
+        color: #FAFAFA;
+    }
 }
 
 .main-nav_link_default{

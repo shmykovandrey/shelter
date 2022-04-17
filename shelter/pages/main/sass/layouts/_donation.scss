@@ -2,55 +2,58 @@
     max-width: 915px;
     margin: 0px auto;
     display: flex;
-    padding-top: 78px;
+    padding-top: 81px;
     padding-bottom: 100px;
     @include media-laptop{
         max-width: 768px;
-        max-height: 783px;
+        height: 100%;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
     }
     @include media-mobile{
         margin: 26px 0px 0px 0px;
-        padding: 40px 0px 0px 0px;
+        padding: 43px 0px 0px 0px;
         text-align: center;
     }
 }
 
 .donation-content__image{
-    width: 505px;
-    height: 261px;
+    max-width: 505px;
+    height: 100%;
     margin-top: 11px;
     @include media-laptop{
         margin-top: 58px;
+        height: 100%;
+        width: 100%;
     }
     @include media-mobile{
         max-width: 260px;
         height: 100%;
-        padding: 22px 0px 42px 0px;
+        padding: 0px 0px 45px 0px;
     }
 }
 
 
 .donation-content_text{
-    width: 380px;
-    height: 282px;
+    max-width: 380px;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
     margin-left: 30px;
+    
     span{
         display: inline-block;
         height: 23px;
         width: 30px;
         background-image: url("../../src/icons/credit-card.svg");
     }
-    // h4{
-    //     display: inline-block;
-    // }
+
     h5{
+        display: inline-block;
+        margin-top: 20px;
         @include media-mobile{
             white-space: nowrap;
             font-family: 'Georgia';
@@ -61,10 +64,11 @@
             color: #545454;
             margin-top: 20px;
             letter-spacing: 0px;
-        }
+        }       
+
     }
     @include media-laptop{
-        margin-left: 0px;
+         margin-left: 0px;
     }
     @include media-mobile{
         width: 100%;
@@ -72,19 +76,20 @@
         padding: 0px;
     }
 }
-
 .donation__button{
-    width: 349px;
-    height: 43px;
+    max-width: 349px;
+    max-height: 43px;
     background: #F1CDB3;
     border-radius: 9px;
     text-align: center;
+    margin-top: 20px;
+    padding:10px 15px 10px 15px;
     a{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
     @include media-mobile{
-        width: 281px;
+        max-width: 281px;
         height: 100%;
         h4{
             white-space: nowrap;
@@ -100,10 +105,14 @@
         padding: 10px 15px;
         margin: 21px 0px 0px 9px;
     }
+    &:hover{
+        background-color: #FDDCC4;
+    }
 }
 .donation-content__p{
-    width: 380px;
-    height: 72px;
+    margin-top: 20px;
+    max-width: 380px;
+    max-height: 72px;
     font-family: 'Arial';
     font-style: italic;
     font-weight: 400;
@@ -111,7 +120,7 @@
     line-height: 18px;
     color: #B2B2B2;
     @include media-mobile{
-        padding: 20px 0px 0px 9px;
+        padding: 2px 0px 0px 9px;
         text-align: justify;
         width: 289px;
     }

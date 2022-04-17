@@ -19,9 +19,7 @@ a{
 }
 header, section, footer{
     height: 100%;
-    @include media-mobile {
-        max-width: 320px;
-    }
+    margin: 0px auto;
 }
 h1{
     /* logo_title */

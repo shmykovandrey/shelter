@@ -7,17 +7,17 @@
 }
 .help__content{
     height: 100%;
-    width: 1029px;
+    max-width: 1029px;
     margin-top: 0px;
     margin-left: 87px;
-    margin-bottom: 90px;
+    margin-bottom: 102px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: space-between;
     align-items:baseline;
     @include media-laptop{
-        margin: 0px 40px 82px;
+        margin: 0px 40px 105px;
         max-width: 630px;
         height:100%;
         justify-content: space-between;
@@ -38,7 +38,7 @@
 }
 .help__items{
     text-align: center;
-    height: 113px;
+    max-height: 113px;
     margin-right: 120px;
     margin-top: 59px;
     @media (min-width:1280px) {
