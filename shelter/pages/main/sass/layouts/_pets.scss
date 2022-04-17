@@ -1,12 +1,24 @@
 .pets_h3{
-    padding-top: 80px;
+    padding-top: 79px;
     text-align: center;
+    @include media-mobile{
+        margin-top: 40px;
+        padding-top: 43px;
+    }
+    
 }
 .pets__slider{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 60px;
+    @include media-mobile{
+        flex-wrap: wrap;
+    }
+    @include media-mobile{
+        padding-top: 43px;
+        padding-left: 16px;
+    }
 }
 .pets__cards{
     display: flex;
@@ -17,6 +29,8 @@
     @include media-laptop{
         gap: 4rem;
     }
+    @include media-mobile{
+    }
 
 }
 
@@ -26,6 +40,13 @@
         &:last-child{
             display: none;
         }
+    }
+    @include media-mobile{
+        display: none;
+        &:first-child{
+            display: block;
+        }
+
     }
 }
 
@@ -45,5 +66,17 @@
 }
 .pets__button{
     display: block;
-    margin: 60px auto 0px; 
+    margin: 60px auto 0px;
+    @include media-mobile{
+        margin-top: 41px;
+    }
+}
+.pets__btn{
+    @include media-mobile{
+        order:2;
+        margin: 22px 0px 0px 42px;
+        &:last-child{
+            margin: 22px 58px 0px 0px;
+        }
+    }
 }

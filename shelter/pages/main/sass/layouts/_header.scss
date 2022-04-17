@@ -37,6 +37,9 @@
     @include media-laptop{
         padding-top: 46px;
     }
+    @include media-mobile{
+        display: none;
+    }
 }
 
 .main-nav__items{

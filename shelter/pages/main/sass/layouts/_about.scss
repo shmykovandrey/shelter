@@ -8,12 +8,21 @@
         flex-direction: column-reverse;
         padding: 80px 140px 100px;
     }
+    @include media-mobile{
+        padding: 42px 0px 0px 0px;
+        text-align: center;
+    }
 }
 .about-content_image{
     display: block;
     max-width: 300px;
     @include media-laptop{
         margin: 80px 63px 0px;
+    }
+    @include media-mobile{
+        margin: 38px 0px 0px 20px;
+        max-width: 260px;
+        max-height: 100%;
     }
 }
 .about-content_text{
@@ -25,6 +34,13 @@
     justify-content: space-between;
     @include media-laptop{
         padding: 0px;
+    }
+    @include media-mobile{
+        width: 270px;
+        margin-left: 15px;
+        p{
+            text-align: justify
+        }
     }
 }
 
