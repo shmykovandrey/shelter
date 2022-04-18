@@ -287,12 +287,14 @@ h5 {
 @media (max-width: 1279px) {
   .wrapper {
     max-width: 708px;
+    width: 100%;
   }
 }
 
 @media (max-width: 767px) {
   .wrapper {
     max-width: 300px;
+    width: 100%;
   }
 }
 
@@ -320,6 +322,11 @@ main {
 }
 
 .header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 120px;
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -335,6 +342,8 @@ main {
 
 @media (max-width: 1279px) {
   .header {
+    max-width: 1280px;
+    width: 100%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -342,6 +351,26 @@ main {
         -ms-flex-align: start;
             align-items: flex-start;
   }
+}
+
+@media (max-width: 767px) {
+  .header {
+    max-width: 768;
+    width: 100%;
+  }
+}
+
+.wrapper__pets-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
 }
 
 .logo {
@@ -385,6 +414,7 @@ main {
 }
 
 .main-nav {
+  margin-top: 40px;
   padding-top: 27px;
   max-width: 446px;
   height: 100%;
@@ -393,6 +423,7 @@ main {
 @media (max-width: 1279px) {
   .main-nav {
     padding-top: 46px;
+    margin-top: 0px;
   }
 }
 
@@ -445,13 +476,13 @@ main {
 .pets__content {
   max-width: 1200px;
   height: 100%;
-  padding: 80px 0px 70px 0px;
+  padding: 200px 0px 70px 0px;
   background-color: #F6F6F6;
 }
 
 @media (max-width: 767px) {
   .pets__content {
-    padding-top: 40px;
+    padding-top: 160px;
     padding-bottom: 40px;
   }
 }
