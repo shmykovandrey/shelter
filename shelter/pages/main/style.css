@@ -147,7 +147,7 @@ input {
 
 @font-face {
   font-family: 'Georgia';
-  src: url("../../src/fonts/Georgia.woff2") format("woff2"), url("../../src/fonts/Georgia.woff") format("woff");
+  src: url("../../../../src/fonts/Georgia.woff2") format("woff2"), url("../../../../src/fonts/Georgia.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
