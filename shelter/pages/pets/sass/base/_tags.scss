@@ -1,0 +1,99 @@
+html{
+    font-size: 10px;
+    margin: 0 auto;
+}
+
+body{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+}
+header, section, footer{
+    height: 100%;
+    margin: 0px auto;
+}
+h1{
+    /* logo_title */
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 110%;
+    /* or 35px */
+    letter-spacing: 0.06em;
+    /* color-primary */
+    color: #545454;
+}
+
+h2{
+    /* h2 */
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4.4rem;
+    line-height: 130%;
+    /* or 57px */
+    /* color-dark-l */
+    color: $color_textPrimary;
+}
+
+h3{
+    /* h3 */
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 130%;
+    /* or 45px */
+    letter-spacing: 0.06em;
+    /* color-dark-l */
+    color: $color_textPrimary;
+    @include media-mobile{
+        font-size: 2.5rem;
+    }
+
+}
+
+h4{
+    /* h4 */
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.0rem;
+    line-height: 115%;
+    /* identical to box height, or 23px */
+    letter-spacing: 0.06em;
+    /* color-dark-l */
+    color: $color_textPrimary;
+}
+
+h5{
+    /* h5 */
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 110%;
+    /* identical to box height, or 17px */
+    letter-spacing: 0.06em;
+    /* color-dark-l */
+    color: $color_textPrimary;
+}
+.paragraph-l{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 160%;
+    color: #CDCDCD;
+}
+
