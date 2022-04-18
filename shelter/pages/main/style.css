@@ -286,13 +286,15 @@ h5 {
 
 @media (max-width: 1279px) {
   .wrapper {
-    max-width: 1200px;
+    max-width: 708px;
+    width: 100%;
   }
 }
 
 @media (max-width: 767px) {
   .wrapper {
-    max-width: 708px;
+    max-width: 300px;
+    width: 100%;
   }
 }
 
@@ -434,6 +436,43 @@ h5 {
   color: #FAFAFA;
   border-bottom: solid #F1CDB3;
   padding-bottom: 4px;
+}
+
+.header__burger {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 22px;
+    z-index: 20;
+    margin: 48px 43px 0px 0px;
+  }
+  .header__burger:after, .header__burger:before {
+    content: '';
+    background-color: #F1CDB3;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+  }
+  .header__burger::before {
+    top: 0px;
+  }
+  .header__burger::after {
+    bottom: 0px;
+  }
+  .header__burger span {
+    position: absolute;
+    background-color: #F1CDB3;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 10px;
+  }
 }
 
 .start-screen-content {
@@ -652,7 +691,7 @@ h5 {
 
 @media (max-width: 767px) {
   .pets_h3 {
-    margin-top: 40px;
+    margin-top: 43px;
     padding-top: 43px;
   }
 }
@@ -973,7 +1012,7 @@ h5 {
   .donation-content__image {
     max-width: 260px;
     height: 100%;
-    padding: 0px 0px 45px 0px;
+    padding: 0px 0px 43px 0px;
   }
 }
 
@@ -1059,7 +1098,7 @@ h5 {
     max-width: 281px;
     height: 100%;
     padding: 10px 15px;
-    margin: 21px 0px 0px 9px;
+    margin: 16px 0px 0px 9px;
   }
   .donation__button h4 {
     white-space: nowrap;
@@ -1100,6 +1139,7 @@ h5 {
 
 .footer {
   max-width: 1280px;
+  margin: 0px auto;
   height: 100%;
   background: url(../../src/images/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   padding-top: 40px;
@@ -1108,15 +1148,16 @@ h5 {
 
 @media (max-width: 1279px) {
   .footer {
+    margin: 0px auto;
     max-width: 768px;
     height: 100%;
-    padding-top: 30px;
+    padding-top: 25px;
   }
 }
 
 @media (max-width: 767px) {
   .footer {
-    margin: 0px;
+    margin: 0px auto;
     padding: 0px;
     max-width: 320px;
   }

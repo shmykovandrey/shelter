@@ -30,11 +30,9 @@
     @include media-mobile{
         max-width: 260px;
         height: 100%;
-        padding: 0px 0px 45px 0px;
+        padding: 0px 0px 43px 0px;
     }
 }
-
-
 .donation-content_text{
     max-width: 380px;
     height: 100%;
@@ -103,7 +101,7 @@
             padding: 3px 0px 0px 13px;
         }
         padding: 10px 15px;
-        margin: 21px 0px 0px 9px;
+        margin: 16px 0px 0px 9px;
     }
     &:hover{
         background-color: #FDDCC4;
