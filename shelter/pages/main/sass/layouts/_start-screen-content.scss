@@ -65,6 +65,9 @@
         object-fit: contain;
     }
     @include media-mobile{
-        margin: 105px 0px -3px 19px;
+        // margin: 105px 0px -3px 19px;
+        padding: 106px 0px 0px 0px;
+        margin-left: 22px;
+        margin-bottom: -5px;
     }
 }
