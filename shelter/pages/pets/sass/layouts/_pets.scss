@@ -17,6 +17,14 @@
   text-align: center;
 
 }
+@keyframes fade {
+  from{
+    opacity: -20%;
+  }
+  to{
+    opacity: 100%;
+  }
+}
 .pets__card_conteiner{
   max-width: 1200px;
   height: 100%;
@@ -35,6 +43,8 @@
   }
 }
 .pets__card{
+  animation-duration: 2s;
+  animation-name: fade;
   max-width: 270px;
   height: 100%;
   margin-bottom: 30px;

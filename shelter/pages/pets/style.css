@@ -323,6 +323,7 @@ main {
 
 .header {
   position: fixed;
+  z-index: 30;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -531,6 +532,24 @@ main {
   text-align: center;
 }
 
+@-webkit-keyframes fade {
+  from {
+    opacity: -20%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: -20%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 .pets__card_conteiner {
   max-width: 1200px;
   height: 100%;
@@ -563,6 +582,10 @@ main {
 }
 
 .pets__card {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: fade;
+          animation-name: fade;
   max-width: 270px;
   height: 100%;
   margin-bottom: 30px;
