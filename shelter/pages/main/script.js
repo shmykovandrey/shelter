@@ -161,8 +161,14 @@ function generateRandomOtherCards() {
     return arr;
 }
 
-burgerMenu.addEventListener('click',rotateBurgerMenu)
-function rotateBurgerMenu(){
+burgerMenu.addEventListener('click', openBurgerMenu)
+function openBurgerMenu(){
+    burgerMenu.classList.toggle('active');
+    burgerNavMenu.classList.toggle('active');
+    document.querySelector('body').classList.toggle('noscroll');
+}
+document.querySelector('.burger-nav__items').addEventListener('click', closeBurgerMenu);
+function closeBurgerMenu(){
     burgerMenu.classList.toggle('active');
     burgerNavMenu.classList.toggle('active');
     document.querySelector('body').classList.toggle('noscroll');
