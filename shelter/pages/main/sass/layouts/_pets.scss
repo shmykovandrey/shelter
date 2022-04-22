@@ -51,6 +51,7 @@
             display: block;
         }
     }
+    transition:all 0.3s ease 0s;
 }
 .pets__card:hover .pets__button_standart{
     background-color: #FDDCC4;
@@ -78,6 +79,7 @@
     }
 }
 .pets__btn{
+    font-size:2rem;
     @include media-mobile{
         order:2;
         margin: 22px 0px 0px 42px;
@@ -87,5 +89,6 @@
     }
     &:hover{
         background-color: #FDDCC4;
+        cursor: pointer;
     }
 }

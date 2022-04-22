@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Cozy House</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <section class="start-screen">
@@ -33,7 +34,23 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="header__burger"><span></span></div>
+                <div class="header__burger-icon"><span></span></div>
+                <div class="header__burger">
+                    <ul class="burger-nav__items">
+                        <li class="burger-nav__item">
+                            <a href="#" class="main-nav_link paragraph-l main-nav_link_default burger__menu-link">About the shelter</a>
+                        </li>
+                        <li class="burger-nav__item">
+                            <a href="../pets/index.html" class="main-nav_link paragraph-l burger__menu-link">Our pets</a>
+                        </li>
+                        <li class="burger-nav__item">
+                            <a href="#help__shelter" class="main-nav_link paragraph-l burger__menu-link">Help the shelter</a>
+                        </li>
+                        <li class="burger-nav__item">
+                            <a href="#footer" class="main-nav_link paragraph-l burger__menu-link">Contacts</a>
+                        </li>
+                    </ul>
+                </div>
             </header>
             <div class="start-screen-content">
                 <div class="start-screen-content-text">
@@ -63,9 +80,7 @@
         <div class="wrapper">
             <h3 class="pets_h3">Our friends who <br>are looking for a house</h3>
             <div class="pets__slider">
-                <button class="button__round pets__btn">
-                    <a href="#!"><b>&#8592</b></a>
-                </button>
+                <button class="button__round pets__btn"><b>&#8592</b></button>
                     <div class="pets__cards">
                         <div class="pets__card card1">
                             <img src="../../src/images/pets-katrine.png" alt="katrine" class="pet__pic">
@@ -89,9 +104,7 @@
                             </button>                  
                         </div>
                     </div>
-                <button class="button__round pets__btn">
-                    <a href="#!"><b>&#8594</b></a>
-                </button>
+                <button class="button__round pets__btn"><b>&#8594</b></button>
             </div>
             <button class="pets__button button-standart">
                 <a href="../pets/index.html" class="get_know_rest_link">Get to know the rest</a>
