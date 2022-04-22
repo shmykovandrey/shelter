@@ -127,11 +127,20 @@
   text-align: center;
   border: 2px solid #F1CDB3;
   background-color: #F6F6F6;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  text-decoration: none;
 }
-.pets_pagination_btn_en:hover {
+.enable:hover {
+  cursor: pointer;
   background-color: #F1CDB3;
 }
-.pets_pagination_btn:disabled{
+.disable{
   border: 2px solid #CDCDCD;
 }
 .pets_pagination_btn:disabled .pets_pag_link{
@@ -146,6 +155,8 @@
   border: 2px solid #F1CDB3;
   background-color: #F1CDB3;
   padding-top: 12px;
+  border: 2px solid #F1CDB3;
+  background-color: #F1CDB3;
 }
 .pets_pag_link{
   font-family: 'Georgia';
@@ -156,9 +167,7 @@
   letter-spacing: 0.06em;
   color: #292929;
   text-decoration: none;
+     pointer-events: none;
+   cursor: default;
 
-}
-.is_page{
-  border: 2px solid #F1CDB3;
-  background-color: #F1CDB3;
 }
