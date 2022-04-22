@@ -163,6 +163,11 @@ body {
   margin: 0 auto;
 }
 
+body.noscroll {
+  height: 100%;
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
   font-family: 'Georgia';
@@ -323,6 +328,7 @@ main {
 
 .header {
   position: fixed;
+  z-index: 10;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -374,6 +380,8 @@ main {
 }
 
 .logo {
+  position: relative;
+  z-index: 11;
   padding-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,41 +481,164 @@ main {
   padding-bottom: 4px;
 }
 
-.header__burger {
+.header__burger-icon {
   display: none;
 }
 
 @media (max-width: 767px) {
-  .header__burger {
+  .header__burger-icon {
     display: block;
     position: relative;
     width: 30px;
     height: 22px;
     z-index: 20;
-    margin: 30px 43px 0px 0px;
+    margin: 48px 0px 0px 0px;
   }
-  .header__burger:after, .header__burger:before {
+  .header__burger-icon span, .header__burger-icon span:before, .header__burger-icon span:after {
     content: '';
-    background-color: #000000;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0px;
-  }
-  .header__burger::before {
-    top: 0px;
-  }
-  .header__burger::after {
-    bottom: 0px;
-  }
-  .header__burger span {
     position: absolute;
     background-color: #000;
-    left: 0;
+    left: 0px;
     width: 100%;
     height: 2px;
+  }
+  .header__burger-icon span:before {
     top: 10px;
   }
+  .header__burger-icon span:after {
+    bottom: 10px;
+  }
+  .header__burger-icon span {
+    top: 10px;
+  }
+  .header__burger-icon.active span {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+  }
+  .header__burger-icon span {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+  }
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    margin-right: -320px;
+  }
+  to {
+    margin-right: 0px;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    margin-right: -320px;
+  }
+  to {
+    margin-right: 0px;
+  }
+}
+
+@-webkit-keyframes slide-out {
+  from {
+    margin-right: 0px;
+  }
+  to {
+    margin-right: -320px;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    margin-right: 0px;
+  }
+  to {
+    margin-right: -320px;
+  }
+}
+
+.burger-nav__items {
+  margin-right: -320px;
+  z-index: 10;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 250px;
+  right: 0px;
+  top: 0px;
+  background: #FFFFFF;
+  width: 320px;
+  max-width: 100%;
+  height: 100%;
+}
+
+.burger-nav__items .burger__menu-link {
+  color: #545454;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 160%;
+}
+
+.burger-nav__items .burger__menu-link:hover {
+  color: #292929;
+}
+
+.burger-nav__items .burger-nav__item {
+  margin-bottom: 40px;
+}
+
+.burger-nav__items.hide {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slide-out;
+          animation-name: slide-out;
+}
+
+.burger-nav__items.active {
+  margin-right: 0px;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slide-in;
+          animation-name: slide-in;
+}
+
+.burger-nav__items.start {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 5;
+  top: 120px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 41, 41, 0.6);
+}
+
+.overlay.hiden {
+  display: none;
 }
 
 .pets__content {
@@ -529,6 +660,24 @@ main {
   height: 100%;
   margin: 0 auto;
   text-align: center;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
 
 .pets__card_conteiner {
@@ -563,6 +712,10 @@ main {
 }
 
 .pets__card {
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-name: fade;
+          animation-name: fade;
   max-width: 270px;
   height: 100%;
   margin-bottom: 30px;
