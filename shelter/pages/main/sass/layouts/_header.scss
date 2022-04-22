@@ -1,5 +1,7 @@
 .header{
     display: flex;
+    position: relative;
+    z-index:10;
     justify-content: space-between;
     align-items: center;
     @include media-laptop{
@@ -9,6 +11,8 @@
 }
 
 .logo{
+    position: relative;
+    z-index: 11;
     padding-top: 60px;
     display: flex;
     flex-direction: column;
@@ -39,7 +43,7 @@
         padding-top: 46px;
     }
     @include media-mobile{
-            display: none;
+        display: none;
     }
 }
 
@@ -71,7 +75,7 @@
     border-bottom: solid $color_btnPrimary;
     padding-bottom: 4px;
 }
-.header__burger{
+.header__burger-icon{
     display: none;
     @include media-mobile{
         display: block;
@@ -79,28 +83,57 @@
         width: 30px;
         height: 22px;
         z-index: 20;
-        margin: 48px 43px 0px 0px;
-        &:after, &:before{
+        margin: 48px 0px 0px 0px;
+        & span,& span:before,& span:after {
             content: '';
-            background-color: #F1CDB3;
             position: absolute;
-            width: 100%;
-            height: 2px;
+            background-color: #F1CDB3;
             left: 0px;
-        }
-        &::before{
-            top: 0px;
-        }
-        &::after{
-            bottom:0px;
-        }
-        & span {
-            position: absolute;
-            background-color: #F1CDB3;
-            left: 0;
             width: 100%;
             height: 2px;
+            
+        }
+        & span:before{
             top: 10px;
         }
+        & span:after{
+            bottom: 10px;
+        }
+        & span{
+            top:10px
+        }
+        &.active span {
+            transform: rotate(90deg);
+            transition: transform 0.5s;
+        }
+    }
+}
+.burger-nav__items{
+    display: none;
+    &.active{
+        z-index: 10;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding-top:250px;
+        right: 0px;
+        top: 0px;
+        background: #292929;
+        width: 320px;
+        max-width: 100%;
+        height: 100%;
+    .burger__menu-link{
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3.2rem;
+        line-height: 160%;
+        /* or 51px */
+    }
+    .burger-nav__item{
+        margin-bottom: 40px;
+    }
     }
 }

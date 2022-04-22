@@ -37,6 +37,8 @@ my age is ${this.age}. ${this.description} `);
 
 const petsCardsDom = document.querySelector('.pets__cards');
 const petSliderNextPrevBtn = document.querySelectorAll('.pets__btn');
+const burgerMenu = document.querySelector('.header__burger-icon');
+const burgerNavMenu = document.querySelector('.burger-nav__items');
 const petsData = [{
         "name": "Jennifer",
         "img": "pets-jennifer.png",
@@ -144,7 +146,6 @@ function generateNewPetSliderCard() {
 }
 
 function generateRandPetsDataArr() {
-    //let arr = JSON.parse(JSON.stringify(petsData));
     let arr = petsData.map(elem => elem);
     let newArr = [];
     while (arr.length > 0) {
@@ -158,4 +159,11 @@ function generateRandomOtherCards() {
     arr = arr.filter(elem => !lastPetSliderCards.includes(elem));
     lastPetSliderCards = [];
     return arr;
+}
+
+burgerMenu.addEventListener('click',rotateBurgerMenu)
+function rotateBurgerMenu(){
+    burgerMenu.classList.toggle('active');
+    burgerNavMenu.classList.toggle('active');
+
 }
