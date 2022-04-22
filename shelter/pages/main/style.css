@@ -747,6 +747,10 @@ h5 {
   }
 }
 
+.pets__cards:hover {
+  cursor: pointer;
+}
+
 .pets__card {
   background-color: #FFFFFF;
 }
