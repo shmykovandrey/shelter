@@ -138,6 +138,7 @@ function generateNewPetSliderCard() {
     petsCardsDom.innerHTML = '';
     let arr = generateRandomOtherCards();
     for (let i = 1; i <= petCardsCount; i++) {
+        // console.log(arr)
         lastPetSliderCards.push(arr.pop());
     }
     lastPetSliderCards.forEach(pet => {
@@ -156,7 +157,7 @@ function generateRandPetsDataArr() {
 
 function generateRandomOtherCards() {
     let arr = generateRandPetsDataArr();
-    arr = arr.filter(elem => !lastPetSliderCards.includes(elem));
+    arr = arr.filter(elem => !(lastPetSliderCards.includes(elem)));
     lastPetSliderCards = [];
     return arr;
 }
