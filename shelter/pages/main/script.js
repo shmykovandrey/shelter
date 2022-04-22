@@ -138,6 +138,7 @@ function generateNewPetSliderCard() {
     petsCardsDom.innerHTML = '';
     let arr = generateRandomOtherCards();
     for (let i = 1; i <= petCardsCount; i++) {
+        // console.log(arr)
         lastPetSliderCards.push(arr.pop());
     }
     lastPetSliderCards.forEach(pet => {
@@ -156,20 +157,29 @@ function generateRandPetsDataArr() {
 
 function generateRandomOtherCards() {
     let arr = generateRandPetsDataArr();
-    arr = arr.filter(elem => !lastPetSliderCards.includes(elem));
+    arr = arr.filter(elem => !(lastPetSliderCards.includes(elem)));
     lastPetSliderCards = [];
     return arr;
 }
 
-burgerMenu.addEventListener('click', openBurgerMenu)
-function openBurgerMenu(){
+burgerMenu.addEventListener('click', openBurgerMenu);
+
+function openBurgerMenu() {
     burgerMenu.classList.toggle('active');
     burgerNavMenu.classList.toggle('active');
+    burgerNavMenu.classList.toggle('hide');
     document.querySelector('body').classList.toggle('noscroll');
+    document.querySelector('.overlay').classList.toggle('hiden');
 }
 document.querySelector('.burger-nav__items').addEventListener('click', closeBurgerMenu);
-function closeBurgerMenu(){
-    burgerMenu.classList.toggle('active');
-    burgerNavMenu.classList.toggle('active');
-    document.querySelector('body').classList.toggle('noscroll');
+document.querySelector('.overlay').addEventListener('click', closeBurgerMenu);
+
+function closeBurgerMenu(event) {
+    if (event.target.classList.contains('main-nav_link') || event.target.classList.contains('overlay')) {
+        burgerMenu.classList.toggle('active');
+        burgerNavMenu.classList.toggle('active');
+        burgerNavMenu.classList.toggle('hide');
+        document.querySelector('body').classList.toggle('noscroll');
+        document.querySelector('.overlay').classList.toggle('hiden');
+    }
 }
