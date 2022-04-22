@@ -6,6 +6,10 @@ html{
 body{
     max-width: 1280px;
     margin: 0 auto;
+    &.noscroll{
+        height: 100%;
+        overflow: hidden;
+    }    
 }
 a{
     text-decoration: none;
