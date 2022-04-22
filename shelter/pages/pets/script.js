@@ -202,9 +202,33 @@ const allPetsRandomGenerated = []
 const petsCardCount = screen.width>1279?8:screen.width>677?6:3;
 const pageNumber = document.querySelector('.is_page span');
 const lastPage = 48/petsCardCount;
+const burgerMenu = document.querySelector('.header__burger-icon');
+const burgerNavMenu = document.querySelector('.burger-nav__items');
 
 window.onload = function(){
     generateNewPetCard();
     contentGeneration();
     document.querySelector('.pets_pagination').addEventListener('click', paginationClickEvent)
+}
+burgerMenu.addEventListener('click', openBurgerMenu);
+
+function openBurgerMenu() {
+    burgerMenu.classList.toggle('active');
+    burgerNavMenu.classList.toggle('active');
+    burgerNavMenu.classList.toggle('hide');
+    burgerNavMenu.classList.remove('start');
+    document.querySelector('body').classList.toggle('noscroll');
+    document.querySelector('.overlay').classList.toggle('hiden');
+}
+document.querySelector('.burger-nav__items').addEventListener('click', closeBurgerMenu);
+document.querySelector('.overlay').addEventListener('click', closeBurgerMenu);
+
+function closeBurgerMenu(event) {
+    if (event.target.classList.contains('main-nav_link') || event.target.classList.contains('overlay')) {
+        burgerMenu.classList.toggle('active');
+        burgerNavMenu.classList.toggle('active');
+        burgerNavMenu.classList.toggle('hide');
+        document.querySelector('body').classList.toggle('noscroll');
+        document.querySelector('.overlay').classList.toggle('hiden');
+    }
 }

@@ -19,7 +19,7 @@
 }
 @keyframes fade {
   from{
-    opacity: -20%;
+    opacity: 0%;
   }
   to{
     opacity: 100%;
@@ -43,7 +43,7 @@
   }
 }
 .pets__card{
-  animation-duration: 2s;
+  animation-duration: 2.5s;
   animation-name: fade;
   max-width: 270px;
   height: 100%;
