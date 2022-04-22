@@ -168,6 +168,7 @@ function openBurgerMenu() {
     burgerMenu.classList.toggle('active');
     burgerNavMenu.classList.toggle('active');
     burgerNavMenu.classList.toggle('hide');
+    burgerNavMenu.classList.remove('start');
     document.querySelector('body').classList.toggle('noscroll');
     document.querySelector('.overlay').classList.toggle('hiden');
 }
