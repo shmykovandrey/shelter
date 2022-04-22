@@ -163,6 +163,11 @@ body {
   margin: 0 auto;
 }
 
+body.noscroll {
+  height: 100%;
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
   font-family: 'Georgia';

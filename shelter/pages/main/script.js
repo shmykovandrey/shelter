@@ -165,5 +165,5 @@ burgerMenu.addEventListener('click',rotateBurgerMenu)
 function rotateBurgerMenu(){
     burgerMenu.classList.toggle('active');
     burgerNavMenu.classList.toggle('active');
-
+    document.querySelector('body').classList.toggle('noscroll');
 }
