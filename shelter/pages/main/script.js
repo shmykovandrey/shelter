@@ -184,3 +184,19 @@ function closeBurgerMenu(event) {
         document.querySelector('.overlay').classList.toggle('hiden');
     }
 }
+
+
+//modal
+const petCardForModal = document.querySelector('.pets__cards').addEventListener('click', clickPetCard)
+
+function clickPetCard(event) {
+    console.log(petsData.filter(elem => elem.name == event.path[2].querySelector('p').innerHTML))
+    createModalWindows();
+}
+
+function createModalWindows() {
+    let modalWindowDomElement = document.createElement('div');
+    modalWindowDomElement.classList.add('overlay__modal');
+    document.querySelector('.pets__cards').append(modalWindowDomElement);
+    console.log(modalWindowDomElement)
+}
