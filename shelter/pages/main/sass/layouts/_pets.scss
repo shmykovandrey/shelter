@@ -20,7 +20,9 @@
         padding-left: 16px;
     }
 }
+
 .pets__cards{
+
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -40,17 +42,6 @@
         cursor: pointer;
         box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
     }
-    @include media-laptop{
-        &:last-child{
-            display: none;
-        }
-    }
-    @include media-mobile{
-        display: none;
-        &:first-child{
-            display: block;
-        }
-    }
 }
 .pets__card:hover .pets__button_standart{
     background-color: #FDDCC4;
@@ -69,6 +60,18 @@
 }
 .pets__button_standart{
     margin-bottom: 30px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    background-color: #fff;
+    border: 2px solid #F1CDB3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    
 }
 .pets__button{
     display: block;
@@ -90,4 +93,116 @@
         background-color: #FDDCC4;
         cursor: pointer;
     }
+}
+
+.carousel-wrapper{
+    margin: 0 auto;
+    width: 990px;
+    overflow: hidden;
+    @include media-laptop{
+        width: 580px;
+    }
+    @include media-mobile{
+        width: 270px;
+    }
+}
+.carousel{ 
+    position: relative;
+    left: -990px;
+    margin: 0 auto;
+    display: flex;
+    @include media-laptop{
+        left: -580px;
+    }
+    @include media-mobile{
+        left: -270px;
+    }
+
+}
+.carousel-next-animation{
+    animation-duration: 2s;
+    animation-name: slider;
+    @include media-laptop{
+        animation-name: slider-laptop;  
+    }
+    @include media-mobile{
+        animation-name: slider-mobile;  
+    }
+}
+.carousel-prev-animation{
+    animation-duration: 2s;
+    animation-name: slider-prev;
+    @include media-laptop{
+        animation-name: slider-prev-laptop;  
+    }
+    @include media-mobile{
+        animation-name: slider-prev-mobile;  
+    }
+}
+.carousel-prev, .carousel-center, .carousel-next{
+    text-align: center;
+    display: flex;
+    gap: 90px;
+    @include media-laptop{
+        gap: 40px;
+    }
+    @include media-mobile{
+        gap: 0px
+    }
+
+}
+
+@keyframes slider {
+    from{
+        margin-left: 0px;
+    }
+    to{
+        margin-left: -990px;
+    }    
+}
+
+@keyframes slider-prev {
+    from{
+        margin-left: 0px;
+    }
+    to{
+        margin-left: 990px;
+    }
+    
+}
+@keyframes slider-laptop {
+    from{
+        margin-left: 0px;
+    }
+    to{
+        margin-left: -580px;
+    }    
+}
+
+@keyframes slider-prev-laptop {
+    from{
+        margin-left: 0px;
+    }
+    to{
+        margin-left: 580px;
+    }
+    
+}
+@keyframes slider-mobile {
+    from{
+        margin-left: 0px;
+    }
+    to{
+        margin-left: -270px;
+    }    
+}
+
+@keyframes slider-prev-mobile {
+    from{
+        margin-left: 0px;
+    }
+    to{
+        margin-left: 280px;
+    }
+    
 }

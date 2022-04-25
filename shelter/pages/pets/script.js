@@ -199,7 +199,7 @@ function renderPagination(){
     }
 }
 const allPetsRandomGenerated = []
-const petsCardCount = screen.width>1279?8:screen.width>677?6:3;
+const petsCardCount = screen.width>1279?8:screen.width>767?6:3;
 const pageNumber = document.querySelector('.is_page span');
 const lastPage = 48/petsCardCount;
 const burgerMenu = document.querySelector('.header__burger-icon');
