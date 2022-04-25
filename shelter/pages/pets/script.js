@@ -256,7 +256,6 @@ function closeBurgerMenu(event) {
 const petCardForModal = document.querySelector('.pets__card_conteiner').addEventListener('click', clickPetCard);
 
 function clickPetCard(event) {
-    console.log(event.target);
     if (!event.target.classList.contains('pets__card_conteiner')){
         createModalWindows(petsData.filter(elem => elem.name == event.path[1].querySelector('p').innerHTML));
     }
