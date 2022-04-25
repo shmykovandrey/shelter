@@ -7,7 +7,9 @@ class PetsCard {
         breed,
         description,
         age,
-        ...rest
+        inoculations,
+        diseases,
+        parasites       
     }) {
         this.name = name;
         this.img = img;
@@ -15,7 +17,9 @@ class PetsCard {
         this.breed = breed;
         this.description = description;
         this.age = age;
-        this.rest = rest;
+        this.inoculations = inoculations;
+        this.diseases = diseases;
+        this.parasites = parasites;
     }
     petsInfo() {
         console.log(`Hello my name is ${this.name}, i'm ${this.type} and ${this.breed},
@@ -27,16 +31,32 @@ my age is ${this.age}. ${this.description} `);
         petCard.classList.add('pets__card');
         template += `<img src="../../src/images/${this.img}" alt="${this.name.toLowerCase()}" class="pet__pic"></img>`
         template += `<p class="pets__name">${this.name}</p>`;
-        template += `<button class="button-standart pets__button_standart">
-        <a href="#!" class="slider__pets_btn_link">Learn more</a>
-        </button>`;
+        template += `<button class="button-standart pets__button_standart">Learn more</button>`;
+        petCard.innerHTML = template;
+        return petCard;
+    }
+    petsModalWindow(){
+        let template = '';
+        const petCard = document.createElement('div');
+        petCard.classList.add('modal__window');
+        template += `<img src="../../src/images/${this.img}" alt="${this.name.toLowerCase()}" class="pet__pic"></img>`
+        template +='<div class="modal__window-content">'
+        template += `<h2 class="modal__pets-name">${this.name}</h2>`;
+        template += `<h4 class="modal__pets-breed">${this.type} - ${this.breed}</h4>`
+        template += `<h5 class="modal__text-content">${this.description}</h5>`
+        template += `<ul class='modal__other-items'>`
+        template += `<li class='modal__other-item'> <b>Age:</b> ${this.age}</li>`
+        template += `<li class='modal__other-item'> <b>Inoculations:</b> ${this.inoculations.join(', ')}</li>`
+        template += `<li class='modal__other-item'> <b>Diseases:</b> ${this.diseases.join(', ')}</li>`
+        template += `<li class='modal__other-item'> <b>Parasites:</b> ${this.parasites.join(', ')}</li>`        
+        template += `</ul>`
+        template +='</div>'
+        template +=`<button class="modal__close-btn active_btn_close">&#9747</button>`
         petCard.innerHTML = template;
         return petCard;
     }
 }
 
-const petsCardsDom = document.querySelector('.pets__cards');
-const petSliderNextPrevBtn = document.querySelectorAll('.pets__btn');
 const burgerMenu = document.querySelector('.header__burger-icon');
 const burgerNavMenu = document.querySelector('.burger-nav__items');
 const petsData = [{
@@ -128,38 +148,24 @@ const petsData = [{
         "parasites": ["lice", "fleas"]
     }
 ];
-let lastPetSliderCards = [petsData[0], petsData[1], petsData[2]];
+const BTN_NEXT = document.getElementById('btn__next');
+const BTN_PREV = document.getElementById('btn__prev');
+let sliderPetsCardCount = screen.width>1279?3:screen.width>767?2:1;
+let sliderCenterElem = [];
+let sliderNextElem = [];
 
-
-petSliderNextPrevBtn.forEach(elem => elem.addEventListener('click', () => generateNewPetSliderCard()));
-
-function generateNewPetSliderCard() {
-    let petCardsCount = document.querySelectorAll('.pets__card').length;
-    petsCardsDom.innerHTML = '';
-    let arr = generateRandomOtherCards();
-    for (let i = 1; i <= petCardsCount; i++) {
-        // console.log(arr)
-        lastPetSliderCards.push(arr.pop());
-    }
-    lastPetSliderCards.forEach(pet => {
-        petsCardsDom.append(new PetsCard(pet).petsCardSlider())
-    });
+for (let i=0; i < sliderPetsCardCount; i++){
+    sliderCenterElem.push(petsData[i]);
+    sliderNextElem.push(petsData[i+3]);
 }
 
-function generateRandPetsDataArr() {
-    let arr = petsData.map(elem => elem);
-    let newArr = [];
-    while (arr.length > 0) {
-        newArr.push(arr.splice(Math.floor(Math.random() * arr.length), 1)[0]);
-    }
-    return newArr;
-}
-
-function generateRandomOtherCards() {
-    let arr = generateRandPetsDataArr();
-    arr = arr.filter(elem => !(lastPetSliderCards.includes(elem)));
-    lastPetSliderCards = [];
-    return arr;
+function renderSlider(){
+    document.querySelector('#carousel-prev').innerHTML = '';
+    sliderNextElem.forEach(elem => document.querySelector('#carousel-prev').append(new PetsCard(elem).petsCardSlider()));
+    document.querySelector('#carousel-next').innerHTML = '';
+    sliderNextElem.forEach(elem => document.querySelector('#carousel-next').append(new PetsCard(elem).petsCardSlider()));
+    document.querySelector('#carousel-center').innerHTML = '';
+    sliderCenterElem.forEach(elem => document.querySelector('#carousel-center').append(new PetsCard(elem).petsCardSlider()));
 }
 
 burgerMenu.addEventListener('click', openBurgerMenu);
@@ -183,4 +189,60 @@ function closeBurgerMenu(event) {
         document.querySelector('body').classList.toggle('noscroll');
         document.querySelector('.overlay').classList.toggle('hiden');
     }
+}
+const petCardForModal = document.querySelector('.carousel').addEventListener('click', clickPetCard);
+
+function clickPetCard(event) {
+    if (!event.target.classList.contains('pets__cards')){
+        createModalWindows(petsData.filter(elem => elem.name == event.path[1].querySelector('p').innerHTML));
+    }
+}
+
+function createModalWindows(pet) {
+    let modalWindowDomElement = document.createElement('div');
+    modalWindowDomElement.classList.add('overlay__modal');
+    document.querySelector('.footer').append(modalWindowDomElement);
+    document.querySelector('body').classList.toggle('noscroll');
+    modalWindowDomElement.append(new PetsCard(pet[0]).petsModalWindow()) 
+    document.querySelector('.overlay__modal').addEventListener('click', closeModalWindows)
+}
+
+function closeModalWindows(event){
+    if (event.target.classList.contains('overlay__modal') || event.target.classList.contains('modal__close-btn')){
+        document.querySelector('body').classList.toggle('noscroll');   
+        document.querySelector('.overlay__modal').remove();
+    }
+
+}
+
+//Slider
+
+renderSlider()
+document.querySelector('.carousel').addEventListener('animationend', ()=>{
+        document.querySelector('.carousel').classList.remove('carousel-next-animation')
+        document.querySelector('.carousel').classList.remove('carousel-prev-animation')
+        sliderCenterElem = sliderNextElem;
+        sliderNextElem = generateRandomOtherCards();
+        renderSlider()
+    })
+BTN_NEXT.addEventListener('click', (event)=>{
+    document.querySelector('.carousel').classList.add('carousel-next-animation')
+})
+BTN_PREV.addEventListener('click', (event)=>{
+    document.querySelector('.carousel').classList.add('carousel-prev-animation')
+})
+
+function generateRandPetsDataArr() {
+    let arr = petsData.map(elem => elem);
+    let newArr = [];
+    while (arr.length > 0) {
+        newArr.push(arr.splice(Math.floor(Math.random() * arr.length), 1)[0]);
+    }
+    return newArr;
+}
+
+function generateRandomOtherCards() {
+    let arr = generateRandPetsDataArr();
+    arr = arr.filter(elem => !(sliderCenterElem.includes(elem)));
+    return arr.splice(0, sliderPetsCardCount);
 }

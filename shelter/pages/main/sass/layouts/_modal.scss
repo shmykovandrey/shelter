@@ -1,0 +1,173 @@
+.overlay__modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: rgba(41, 41, 41, 0.6);
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.modal__window{    
+    background: #FAFAFA;
+    border-radius: 9px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 500px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    padding-bottom: 10px;
+    &:hover{
+        cursor:default;
+    }
+    @include media-laptop{
+        max-width: 630px;
+        max-height: 350px;
+    }
+    @include media-mobile{
+        max-width: 240px;
+        max-height: 440px;
+        img{
+            display: none;
+        }
+    }
+}
+
+.modal__window-content{
+    color: #000;
+    margin: 50px auto;
+    padding-right: 20px;
+    padding-left: 30px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: start;
+    @include media-laptop{
+        margin-top: 10px;
+        padding: 10px;
+        height: 100%;       
+    }
+    @include media-mobile{
+        margin-top: 10px;
+        padding: 10px;
+        height: 100%;
+    }
+    h2{
+        color: #000;
+        @include media-laptop{
+            font-family: 'Georgia';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 130%;
+            letter-spacing: 0.06em;
+        }
+        @include media-mobile{
+            text-align: center;
+            font-family: 'Georgia';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 130%;
+            letter-spacing: 0.06em;
+        }
+    }
+    h4{
+        color: #000;
+        margin-top: 10px;
+        @include media-mobile{
+           text-align: center;   
+        }
+    }
+    h5{
+        color: #000;
+        margin-top: 40px;
+        @include media-laptop{
+            margin-top: 15px;
+            font-family: 'Georgia';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 110%;
+            text-align: justify;
+            letter-spacing: 0.06em; 
+        }
+        @include media-mobile{
+            margin-top: 15px;
+            font-family: 'Georgia';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 110%;
+            text-align: justify;
+            letter-spacing: 0.06em; 
+        }
+    }
+    ul{
+        padding-bottom: 5px;
+        color: #000;
+        margin-top: 30px;
+        @include media-laptop{
+           margin-top: 10px;  
+        }
+        @include media-mobile{
+           margin-top: 10px; 
+        }
+    }
+    b{
+        color: #000;
+        font-weight:800;
+    }
+}
+
+.modal__other-item{
+    margin-top: 10px;
+    padding-left: 20px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000;
+    &::before {
+        content: "•"; color: #F1CDB3;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+}
+
+.modal__close-btn{
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    height: 52px;
+    width: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    background: transparent;
+    font-size: 2rem;
+    font-weight: 800;
+    &:hover{
+        cursor: pointer;
+        background: #F1CDB3;
+    }
+    @include media-mobile{
+        top: -52px;
+        right: -30px;
+    }
+}
+
+.overlay__modal:hover .modal__window:not(:hover) .modal__close-btn,
+.modal__close-btn:hover {
+    cursor: pointer;
+    background-color: #F1CDB3;
+    border-color: #F1CDB3;
+}
