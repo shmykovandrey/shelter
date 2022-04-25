@@ -57,32 +57,6 @@ my age is ${this.age}. ${this.description} `);
     }
 }
 
-
-
-
-/* Slider
-const petsCardsDom = document.querySelector('.pets__cards');
-const petSliderNextPrevBtn = document.querySelectorAll('.pets__btn');
-
-let lastPetSliderCards = [petsData[0], petsData[1], petsData[2]];
-
-petSliderNextPrevBtn.forEach(elem => elem.addEventListener('click', () => generateNewPetSliderCard()));
-
-function generateNewPetSliderCard() {
-    let petCardsCount = document.querySelectorAll('.pets__card').length;
-    petsCardsDom.innerHTML = '';
-    let arr = generateRandomOtherCards();
-    for (let i = 1; i <= petCardsCount; i++) {
-        // console.log(arr)
-        lastPetSliderCards.push(arr.pop());
-    }
-    lastPetSliderCards.forEach(pet => {
-        petsCardsDom.append(new PetsCard(pet).petsCardSlider())
-    });
-}
-*/
-
-
 const burgerMenu = document.querySelector('.header__burger-icon');
 const burgerNavMenu = document.querySelector('.burger-nav__items');
 const petsData = [{
@@ -177,7 +151,6 @@ const petsData = [{
 const BTN_NEXT = document.getElementById('btn__next');
 const BTN_PREV = document.getElementById('btn__prev');
 let sliderPetsCardCount = screen.width>1279?3:screen.width>767?2:1;
-console.log(screen.width)
 let sliderCenterElem = [];
 let sliderNextElem = [];
 
@@ -187,10 +160,6 @@ for (let i=0; i < sliderPetsCardCount; i++){
 }
 
 function renderSlider(){
-    console.log('center');
-    console.log(sliderCenterElem);
-    console.log('next');
-    console.log(sliderNextElem);
     document.querySelector('#carousel-prev').innerHTML = '';
     sliderNextElem.forEach(elem => document.querySelector('#carousel-prev').append(new PetsCard(elem).petsCardSlider()));
     document.querySelector('#carousel-next').innerHTML = '';
@@ -198,8 +167,6 @@ function renderSlider(){
     document.querySelector('#carousel-center').innerHTML = '';
     sliderCenterElem.forEach(elem => document.querySelector('#carousel-center').append(new PetsCard(elem).petsCardSlider()));
 }
-
-
 
 burgerMenu.addEventListener('click', openBurgerMenu);
 
@@ -223,10 +190,6 @@ function closeBurgerMenu(event) {
         document.querySelector('.overlay').classList.toggle('hiden');
     }
 }
-
-
-//modal
-// const petCardForModal = document.querySelector('.pets__cards').addEventListener('click', clickPetCard)
 const petCardForModal = document.querySelector('.carousel').addEventListener('click', clickPetCard);
 
 function clickPetCard(event) {
