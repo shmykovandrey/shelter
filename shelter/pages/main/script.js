@@ -193,7 +193,7 @@ function closeBurgerMenu(event) {
 const petCardForModal = document.querySelector('.carousel').addEventListener('click', clickPetCard);
 
 function clickPetCard(event) {
-    if (!event.target.classList.contains('pets__cards')){
+    if (!event.target.classList.contains('carousel')){
         createModalWindows(petsData.filter(elem => elem.name == event.path[1].querySelector('p').innerHTML));
     }
 }
