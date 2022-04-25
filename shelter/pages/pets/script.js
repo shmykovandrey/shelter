@@ -90,21 +90,25 @@ const petsData = [{
 ];
 class PetsCard {
     constructor({
-        name,
+         name,
         img,
         type,
         breed,
         description,
         age,
-        ...rest
+        inoculations,
+        diseases,
+        parasites 
     }) {
-        this.name = name;
+       this.name = name;
         this.img = img;
         this.type = type;
         this.breed = breed;
         this.description = description;
         this.age = age;
-        this.rest = rest;
+        this.inoculations = inoculations;
+        this.diseases = diseases;
+        this.parasites = parasites;
     }
     petsInfo() {
         console.log(`Hello my name is ${this.name}, i'm ${this.type} and ${this.breed},
@@ -116,21 +120,37 @@ my age is ${this.age}. ${this.description} `);
         petCard.classList.add('pets__card');
         template += `<img src="../../src/images/${this.img}" alt="${this.name.toLowerCase()}" class="pet__pic"></img>`
         template += `<p class="pets_name">${this.name}</p>`;
-        template += `<button class="pets_learn_more">
-        <a href="#!" class="slider__pets_btn_link">Learn more</a>
-        </button>`;
+        template += `<button class="pets_learn_more">Learn more</button>`;
+        petCard.innerHTML = template;
+        return petCard;
+    }
+    petsModalWindow(){
+        let template = '';
+        const petCard = document.createElement('div');
+        petCard.classList.add('modal__window');
+        template += `<img src="../../src/images/${this.img}" alt="${this.name.toLowerCase()}" class="pet__pic"></img>`
+        template +='<div class="modal__window-content">'
+        template += `<h2 class="modal__pets-name">${this.name}</h2>`;
+        template += `<h4 class="modal__pets-breed">${this.type} - ${this.breed}</h4>`
+        template += `<h5 class="modal__text-content">${this.description}</h5>`
+        template += `<ul class='modal__other-items'>`
+        template += `<li class='modal__other-item'> <b>Age:</b> ${this.age}</li>`
+        template += `<li class='modal__other-item'> <b>Inoculations:</b> ${this.inoculations.join(', ')}</li>`
+        template += `<li class='modal__other-item'> <b>Diseases:</b> ${this.diseases.join(', ')}</li>`
+        template += `<li class='modal__other-item'> <b>Parasites:</b> ${this.parasites.join(', ')}</li>`        
+        template += `</ul>`
+        template +='</div>'
+        template +=`<button class="modal__close-btn active_btn_close">&#9747</button>`
         petCard.innerHTML = template;
         return petCard;
     }
 }
 
-
-
 function generateNewPetCard() {
     let allPets = []
-    for (let i = 1; i <= 6; i++){
+    for (let i = 1; i <= (48/petsCardCount); i++){
        let arr = generateRandPetsDataArr();
-       for (let i = 1; i <= 8; i++) {
+       for (let i = 1; i <= petsCardCount; i++) {
             allPets.push(arr.pop());
         }
     }
@@ -231,4 +251,30 @@ function closeBurgerMenu(event) {
         document.querySelector('body').classList.toggle('noscroll');
         document.querySelector('.overlay').classList.toggle('hiden');
     }
+}
+
+const petCardForModal = document.querySelector('.pets__card_conteiner').addEventListener('click', clickPetCard);
+
+function clickPetCard(event) {
+    console.log(event.target);
+    if (!event.target.classList.contains('pets__card_conteiner')){
+        createModalWindows(petsData.filter(elem => elem.name == event.path[1].querySelector('p').innerHTML));
+    }
+}
+
+function createModalWindows(pet) {
+    let modalWindowDomElement = document.createElement('div');
+    modalWindowDomElement.classList.add('overlay__modal');
+    document.querySelector('.footer').append(modalWindowDomElement);
+    document.querySelector('body').classList.toggle('noscroll');
+    modalWindowDomElement.append(new PetsCard(pet[0]).petsModalWindow()) 
+    document.querySelector('.overlay__modal').addEventListener('click', closeModalWindows)
+}
+
+function closeModalWindows(event){
+    if (event.target.classList.contains('overlay__modal') || event.target.classList.contains('modal__close-btn')){
+        document.querySelector('body').classList.toggle('noscroll');   
+        document.querySelector('.overlay__modal').remove();
+    }
+
 }
