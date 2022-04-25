@@ -120,22 +120,26 @@
 
 }
 .carousel-next-animation{
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-name: slider;
     @include media-laptop{
         animation-name: slider-laptop;  
+        animation-duration: 1s; 
     }
     @include media-mobile{
+        animation-duration: 0.5s;
         animation-name: slider-mobile;  
     }
 }
 .carousel-prev-animation{
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-name: slider-prev;
     @include media-laptop{
-        animation-name: slider-prev-laptop;  
+        animation-name: slider-prev-laptop;
+        animation-duration: 1s;  
     }
     @include media-mobile{
+        animation-duration: 0.5s;
         animation-name: slider-prev-mobile;  
     }
 }
