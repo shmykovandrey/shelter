@@ -9,7 +9,7 @@ class PetsCard {
         age,
         inoculations,
         diseases,
-        parasites       
+        parasites
     }) {
         this.name = name;
         this.img = img;
@@ -35,12 +35,12 @@ my age is ${this.age}. ${this.description} `);
         petCard.innerHTML = template;
         return petCard;
     }
-    petsModalWindow(){
+    petsModalWindow() {
         let template = '';
         const petCard = document.createElement('div');
         petCard.classList.add('modal__window');
         template += `<img src="../../src/images/${this.img}" alt="${this.name.toLowerCase()}" class="pet__pic"></img>`
-        template +='<div class="modal__window-content">'
+        template += '<div class="modal__window-content">'
         template += `<h2 class="modal__pets-name">${this.name}</h2>`;
         template += `<h4 class="modal__pets-breed">${this.type} - ${this.breed}</h4>`
         template += `<h5 class="modal__text-content">${this.description}</h5>`
@@ -48,10 +48,10 @@ my age is ${this.age}. ${this.description} `);
         template += `<li class='modal__other-item'> <b>Age:</b> ${this.age}</li>`
         template += `<li class='modal__other-item'> <b>Inoculations:</b> ${this.inoculations.join(', ')}</li>`
         template += `<li class='modal__other-item'> <b>Diseases:</b> ${this.diseases.join(', ')}</li>`
-        template += `<li class='modal__other-item'> <b>Parasites:</b> ${this.parasites.join(', ')}</li>`        
+        template += `<li class='modal__other-item'> <b>Parasites:</b> ${this.parasites.join(', ')}</li>`
         template += `</ul>`
-        template +='</div>'
-        template +=`<button class="modal__close-btn active_btn_close">&#9747</button>`
+        template += '</div>'
+        template += `<button class="modal__close-btn active_btn_close">&#9747</button>`
         petCard.innerHTML = template;
         return petCard;
     }
@@ -150,23 +150,10 @@ const petsData = [{
 ];
 const BTN_NEXT = document.getElementById('btn__next');
 const BTN_PREV = document.getElementById('btn__prev');
-let sliderPetsCardCount = screen.width>1279?3:screen.width>767?2:1;
+let sliderPetsCardCount = screen.width > 1279 ? 3 : screen.width > 767 ? 2 : 1;
 let sliderCenterElem = [];
 let sliderNextElem = [];
 
-for (let i=0; i < sliderPetsCardCount; i++){
-    sliderCenterElem.push(petsData[i]);
-    sliderNextElem.push(petsData[i+3]);
-}
-
-function renderSlider(){
-    document.querySelector('#carousel-prev').innerHTML = '';
-    sliderNextElem.forEach(elem => document.querySelector('#carousel-prev').append(new PetsCard(elem).petsCardSlider()));
-    document.querySelector('#carousel-next').innerHTML = '';
-    sliderNextElem.forEach(elem => document.querySelector('#carousel-next').append(new PetsCard(elem).petsCardSlider()));
-    document.querySelector('#carousel-center').innerHTML = '';
-    sliderCenterElem.forEach(elem => document.querySelector('#carousel-center').append(new PetsCard(elem).petsCardSlider()));
-}
 
 burgerMenu.addEventListener('click', openBurgerMenu);
 
@@ -193,7 +180,7 @@ function closeBurgerMenu(event) {
 const petCardForModal = document.querySelector('.carousel').addEventListener('click', clickPetCard);
 
 function clickPetCard(event) {
-    if (!event.target.classList.contains('carousel')){
+    if (!event.target.classList.contains('carousel')) {
         createModalWindows(petsData.filter(elem => elem.name == event.path[1].querySelector('p').innerHTML));
     }
 }
@@ -203,13 +190,13 @@ function createModalWindows(pet) {
     modalWindowDomElement.classList.add('overlay__modal');
     document.querySelector('.footer').append(modalWindowDomElement);
     document.querySelector('body').classList.toggle('noscroll');
-    modalWindowDomElement.append(new PetsCard(pet[0]).petsModalWindow()) 
+    modalWindowDomElement.append(new PetsCard(pet[0]).petsModalWindow())
     document.querySelector('.overlay__modal').addEventListener('click', closeModalWindows)
 }
 
-function closeModalWindows(event){
-    if (event.target.classList.contains('overlay__modal') || event.target.classList.contains('modal__close-btn')){
-        document.querySelector('body').classList.toggle('noscroll');   
+function closeModalWindows(event) {
+    if (event.target.classList.contains('overlay__modal') || event.target.classList.contains('modal__close-btn')) {
+        document.querySelector('body').classList.toggle('noscroll');
         document.querySelector('.overlay__modal').remove();
     }
 
@@ -217,18 +204,32 @@ function closeModalWindows(event){
 
 //Slider
 
+for (let i = 0; i < sliderPetsCardCount; i++) {
+    sliderCenterElem.push(petsData[i]);
+    sliderNextElem = generateRandomOtherCards();
+}
+
+function renderSlider() {
+    document.querySelector('#carousel-prev').innerHTML = '';
+    sliderNextElem.forEach(elem => document.querySelector('#carousel-prev').append(new PetsCard(elem).petsCardSlider()));
+    document.querySelector('#carousel-next').innerHTML = '';
+    sliderNextElem.forEach(elem => document.querySelector('#carousel-next').append(new PetsCard(elem).petsCardSlider()));
+    document.querySelector('#carousel-center').innerHTML = '';
+    sliderCenterElem.forEach(elem => document.querySelector('#carousel-center').append(new PetsCard(elem).petsCardSlider()));
+}
+
 renderSlider()
-document.querySelector('.carousel').addEventListener('animationend', ()=>{
-        document.querySelector('.carousel').classList.remove('carousel-next-animation')
-        document.querySelector('.carousel').classList.remove('carousel-prev-animation')
-        sliderCenterElem = sliderNextElem;
-        sliderNextElem = generateRandomOtherCards();
-        renderSlider()
-    })
-BTN_NEXT.addEventListener('click', (event)=>{
+document.querySelector('.carousel').addEventListener('animationend', () => {
+    document.querySelector('.carousel').classList.remove('carousel-next-animation')
+    document.querySelector('.carousel').classList.remove('carousel-prev-animation')
+    sliderCenterElem = sliderNextElem;
+    sliderNextElem = generateRandomOtherCards();
+    renderSlider()
+})
+BTN_NEXT.addEventListener('click', (event) => {
     document.querySelector('.carousel').classList.add('carousel-next-animation')
 })
-BTN_PREV.addEventListener('click', (event)=>{
+BTN_PREV.addEventListener('click', (event) => {
     document.querySelector('.carousel').classList.add('carousel-prev-animation')
 })
 
