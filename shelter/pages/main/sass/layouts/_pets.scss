@@ -109,11 +109,11 @@
 }
 .carousel{ 
     position: relative;
-    left: -990px;
+    left: -1080px;
     margin: 0 auto;
     display: flex;
     @include media-laptop{
-        left: -580px;
+        left: -620px;
     }
     @include media-mobile{
         left: -270px;
@@ -157,12 +157,22 @@
 
 }
 
+.carousel-center{
+    margin: 0px 90px;
+    @include media-laptop{
+        margin: 0px 40px;
+    }
+    @include media-mobile{
+        margin: 0px 0px;
+    }
+}
+
 @keyframes slider {
     from{
         margin-left: 0px;
     }
     to{
-        margin-left: -990px;
+        margin-left: -1080px;
     }    
 }
 
@@ -171,7 +181,7 @@
         margin-left: 0px;
     }
     to{
-        margin-left: 990px;
+        margin-left: 1080px;
     }
     
 }
@@ -180,7 +190,7 @@
         margin-left: 0px;
     }
     to{
-        margin-left: -580px;
+        margin-left: -620px;
     }    
 }
 
@@ -189,7 +199,7 @@
         margin-left: 0px;
     }
     to{
-        margin-left: 580px;
+        margin-left: 620px;
     }
     
 }

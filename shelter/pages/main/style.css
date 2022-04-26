@@ -980,7 +980,7 @@ h5 {
 
 .carousel {
   position: relative;
-  left: -990px;
+  left: -1080px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -989,7 +989,7 @@ h5 {
 
 @media (max-width: 1279px) {
   .carousel {
-    left: -580px;
+    left: -620px;
   }
 }
 
@@ -1069,12 +1069,28 @@ h5 {
   }
 }
 
+.carousel-center {
+  margin: 0px 90px;
+}
+
+@media (max-width: 1279px) {
+  .carousel-center {
+    margin: 0px 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-center {
+    margin: 0px 0px;
+  }
+}
+
 @-webkit-keyframes slider {
   from {
     margin-left: 0px;
   }
   to {
-    margin-left: -990px;
+    margin-left: -1080px;
   }
 }
 
@@ -1083,7 +1099,7 @@ h5 {
     margin-left: 0px;
   }
   to {
-    margin-left: -990px;
+    margin-left: -1080px;
   }
 }
 
@@ -1092,7 +1108,7 @@ h5 {
     margin-left: 0px;
   }
   to {
-    margin-left: 990px;
+    margin-left: 1080px;
   }
 }
 
@@ -1101,7 +1117,7 @@ h5 {
     margin-left: 0px;
   }
   to {
-    margin-left: 990px;
+    margin-left: 1080px;
   }
 }
 
@@ -1110,7 +1126,7 @@ h5 {
     margin-left: 0px;
   }
   to {
-    margin-left: -580px;
+    margin-left: -620px;
   }
 }
 
@@ -1119,7 +1135,7 @@ h5 {
     margin-left: 0px;
   }
   to {
-    margin-left: -580px;
+    margin-left: -620px;
   }
 }
 
@@ -1128,7 +1144,7 @@ h5 {
     margin-left: 0px;
   }
   to {
-    margin-left: 580px;
+    margin-left: 620px;
   }
 }
 
@@ -1137,7 +1153,7 @@ h5 {
     margin-left: 0px;
   }
   to {
-    margin-left: 580px;
+    margin-left: 620px;
   }
 }
 
