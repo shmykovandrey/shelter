@@ -38,6 +38,7 @@
 
 .pets__card{
     background-color: $color_backgroundLight;
+    min-width: 270px;
     &:hover{
         cursor: pointer;
         box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);

@@ -887,6 +887,7 @@ h5 {
 
 .pets__card {
   background-color: #FFFFFF;
+  min-width: 270px;
 }
 
 .pets__card:hover {
