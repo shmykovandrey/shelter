@@ -209,16 +209,16 @@ for (let i = 0; i < sliderPetsCardCount; i++) {
     sliderNextElem = generateRandomOtherCards();
 }
 
+renderSlider();
+
 function renderSlider() {
+    document.querySelector('#carousel-center').innerHTML = '';
+    sliderCenterElem.forEach(elem => document.querySelector('#carousel-center').append(new PetsCard(elem).petsCardSlider()));
     document.querySelector('#carousel-prev').innerHTML = '';
     sliderNextElem.forEach(elem => document.querySelector('#carousel-prev').append(new PetsCard(elem).petsCardSlider()));
     document.querySelector('#carousel-next').innerHTML = '';
     sliderNextElem.forEach(elem => document.querySelector('#carousel-next').append(new PetsCard(elem).petsCardSlider()));
-    document.querySelector('#carousel-center').innerHTML = '';
-    sliderCenterElem.forEach(elem => document.querySelector('#carousel-center').append(new PetsCard(elem).petsCardSlider()));
 }
-
-renderSlider()
 document.querySelector('.carousel').addEventListener('animationend', () => {
     document.querySelector('.carousel').classList.remove('carousel-next-animation')
     document.querySelector('.carousel').classList.remove('carousel-prev-animation')
