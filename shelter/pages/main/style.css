@@ -999,8 +999,8 @@ h5 {
 }
 
 .carousel-next-animation {
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   -webkit-animation-name: slider;
           animation-name: slider;
 }
@@ -1009,19 +1009,23 @@ h5 {
   .carousel-next-animation {
     -webkit-animation-name: slider-laptop;
             animation-name: slider-laptop;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
   }
 }
 
 @media (max-width: 767px) {
   .carousel-next-animation {
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
     -webkit-animation-name: slider-mobile;
             animation-name: slider-mobile;
   }
 }
 
 .carousel-prev-animation {
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   -webkit-animation-name: slider-prev;
           animation-name: slider-prev;
 }
@@ -1030,11 +1034,15 @@ h5 {
   .carousel-prev-animation {
     -webkit-animation-name: slider-prev-laptop;
             animation-name: slider-prev-laptop;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
   }
 }
 
 @media (max-width: 767px) {
   .carousel-prev-animation {
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
     -webkit-animation-name: slider-prev-mobile;
             animation-name: slider-prev-mobile;
   }
