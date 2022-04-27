@@ -162,6 +162,7 @@ function openBurgerMenu() {
     burgerNavMenu.classList.toggle('active');
     burgerNavMenu.classList.toggle('hide');
     burgerNavMenu.classList.remove('start');
+    document.querySelector('.logo-mobile').classList.toggle('active');
     document.querySelector('body').classList.toggle('noscroll');
     document.querySelector('.overlay').classList.toggle('hiden');
 }
@@ -173,6 +174,7 @@ function closeBurgerMenu(event) {
         burgerMenu.classList.toggle('active');
         burgerNavMenu.classList.toggle('active');
         burgerNavMenu.classList.toggle('hide');
+        document.querySelector('.logo-mobile').classList.toggle('active');
         document.querySelector('body').classList.toggle('noscroll');
         document.querySelector('.overlay').classList.toggle('hiden');
     }

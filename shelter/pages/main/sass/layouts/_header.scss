@@ -12,7 +12,7 @@
 
 .logo{
     position: relative;
-    z-index: 11;
+    z-index: 1;
     padding-top: 60px;
     display: flex;
     flex-direction: column;
@@ -86,11 +86,12 @@
     display: none;
     @include media-mobile{
         display: block;
-        position: relative;
+        position: absolute;
+        top: 48px;
+        right: 25px;
         width: 30px;
         height: 22px;
         z-index: 20;
-        margin: 48px 0px 0px 0px;
         & span,& span:before,& span:after {
             content: '';
             position: absolute;
@@ -184,5 +185,17 @@
     background: rgba(41, 41, 41, 0.6);
     &.hiden{
         display:none;
+    }
+}
+
+.logo-mobile{
+    display: none;
+    &.active{
+        display: block;
+        position: fixed;
+        top: 0px;
+        right: 100px;
+        animation-duration: 1s;
+        animation-name: slide-in;
     }
 }

@@ -90,7 +90,7 @@ const petsData = [{
 ];
 class PetsCard {
     constructor({
-         name,
+        name,
         img,
         type,
         breed,
@@ -98,9 +98,9 @@ class PetsCard {
         age,
         inoculations,
         diseases,
-        parasites 
+        parasites
     }) {
-       this.name = name;
+        this.name = name;
         this.img = img;
         this.type = type;
         this.breed = breed;
@@ -124,12 +124,12 @@ my age is ${this.age}. ${this.description} `);
         petCard.innerHTML = template;
         return petCard;
     }
-    petsModalWindow(){
+    petsModalWindow() {
         let template = '';
         const petCard = document.createElement('div');
         petCard.classList.add('modal__window');
         template += `<img src="../../src/images/${this.img}" alt="${this.name.toLowerCase()}" class="pet__pic"></img>`
-        template +='<div class="modal__window-content">'
+        template += '<div class="modal__window-content">'
         template += `<h2 class="modal__pets-name">${this.name}</h2>`;
         template += `<h4 class="modal__pets-breed">${this.type} - ${this.breed}</h4>`
         template += `<h5 class="modal__text-content">${this.description}</h5>`
@@ -137,10 +137,10 @@ my age is ${this.age}. ${this.description} `);
         template += `<li class='modal__other-item'> <b>Age:</b> ${this.age}</li>`
         template += `<li class='modal__other-item'> <b>Inoculations:</b> ${this.inoculations.join(', ')}</li>`
         template += `<li class='modal__other-item'> <b>Diseases:</b> ${this.diseases.join(', ')}</li>`
-        template += `<li class='modal__other-item'> <b>Parasites:</b> ${this.parasites.join(', ')}</li>`        
+        template += `<li class='modal__other-item'> <b>Parasites:</b> ${this.parasites.join(', ')}</li>`
         template += `</ul>`
-        template +='</div>'
-        template +=`<button class="modal__close-btn active_btn_close">&#9747</button>`
+        template += '</div>'
+        template += `<button class="modal__close-btn active_btn_close">&#9747</button>`
         petCard.innerHTML = template;
         return petCard;
     }
@@ -148,9 +148,9 @@ my age is ${this.age}. ${this.description} `);
 
 function generateNewPetCard() {
     let allPets = []
-    for (let i = 1; i <= (48/petsCardCount); i++){
-       let arr = generateRandPetsDataArr();
-       for (let i = 1; i <= petsCardCount; i++) {
+    for (let i = 1; i <= (48 / petsCardCount); i++) {
+        let arr = generateRandPetsDataArr();
+        for (let i = 1; i <= petsCardCount; i++) {
             allPets.push(arr.pop());
         }
     }
@@ -167,51 +167,53 @@ function generateRandPetsDataArr() {
     }
     return newArr;
 }
-function contentGeneration(){
-    document.querySelector('.pets__card_conteiner').innerHTML='';
-    for (let i = ((+pageNumber.innerHTML-1)*petsCardCount); i <= (+pageNumber.innerHTML*petsCardCount -1);i++ ){
+
+function contentGeneration() {
+    document.querySelector('.pets__card_conteiner').innerHTML = '';
+    for (let i = ((+pageNumber.innerHTML - 1) * petsCardCount); i <= (+pageNumber.innerHTML * petsCardCount - 1); i++) {
         document.querySelector('.pets__card_conteiner').append(allPetsRandomGenerated[i])
     }
 }
 
-function paginationClickEvent(event){
-    if (event.target.classList.contains('nextPageBtn')&&event.target.classList.contains('enable')){
+function paginationClickEvent(event) {
+    if (event.target.classList.contains('nextPageBtn') && event.target.classList.contains('enable')) {
         +pageNumber.innerHTML++;
         contentGeneration();
     }
-    if (event.target.classList.contains('prevPageBtn')&&event.target.classList.contains('enable')){
+    if (event.target.classList.contains('prevPageBtn') && event.target.classList.contains('enable')) {
         +pageNumber.innerHTML--;
         contentGeneration();
     }
-    if (event.target.classList.contains('lastPageBtn')&&event.target.classList.contains('enable')){
+    if (event.target.classList.contains('lastPageBtn') && event.target.classList.contains('enable')) {
         pageNumber.innerHTML = lastPage;
         contentGeneration();
     }
-    if (event.target.classList.contains('firstPageBtn')&&event.target.classList.contains('enable')){
+    if (event.target.classList.contains('firstPageBtn') && event.target.classList.contains('enable')) {
         pageNumber.innerHTML = 1;
         contentGeneration();
     }
 
     renderPagination();
 }
-function renderPagination(){
-    if (+pageNumber.innerHTML == lastPage){
+
+function renderPagination() {
+    if (+pageNumber.innerHTML == lastPage) {
         document.querySelector('.nextPageBtn').classList.remove('enable');
         document.querySelector('.nextPageBtn').classList.add('disable');
         document.querySelector('.lastPageBtn').classList.remove('enable');
         document.querySelector('.lastPageBtn').classList.add('disable');
-    }else {
+    } else {
         document.querySelector('.nextPageBtn').classList.remove('disable');
         document.querySelector('.nextPageBtn').classList.add('enable');
         document.querySelector('.lastPageBtn').classList.remove('disable');
         document.querySelector('.lastPageBtn').classList.add('enable');
     }
-    if ((+pageNumber.innerHTML) <= 1){
+    if ((+pageNumber.innerHTML) <= 1) {
         document.querySelector('.firstPageBtn').classList.remove('enable');
         document.querySelector('.firstPageBtn').classList.add('disable');
         document.querySelector('.prevPageBtn').classList.remove('enable');
         document.querySelector('.prevPageBtn').classList.add('disable');
-    } else{
+    } else {
         document.querySelector('.firstPageBtn').classList.remove('disable');
         document.querySelector('.firstPageBtn').classList.add('enable');
         document.querySelector('.prevPageBtn').classList.remove('disable');
@@ -219,13 +221,13 @@ function renderPagination(){
     }
 }
 const allPetsRandomGenerated = []
-const petsCardCount = screen.width>1279?8:screen.width>767?6:3;
+const petsCardCount = screen.width > 1279 ? 8 : screen.width > 767 ? 6 : 3;
 const pageNumber = document.querySelector('.is_page span');
-const lastPage = 48/petsCardCount;
+const lastPage = 48 / petsCardCount;
 const burgerMenu = document.querySelector('.header__burger-icon');
 const burgerNavMenu = document.querySelector('.burger-nav__items');
 
-window.onload = function(){
+window.onload = function () {
     generateNewPetCard();
     contentGeneration();
     document.querySelector('.pets_pagination').addEventListener('click', paginationClickEvent)
@@ -237,6 +239,7 @@ function openBurgerMenu() {
     burgerNavMenu.classList.toggle('active');
     burgerNavMenu.classList.toggle('hide');
     burgerNavMenu.classList.remove('start');
+    document.querySelector('.logo-mobile').classList.toggle('active');
     document.querySelector('body').classList.toggle('noscroll');
     document.querySelector('.overlay').classList.toggle('hiden');
 }
@@ -248,6 +251,7 @@ function closeBurgerMenu(event) {
         burgerMenu.classList.toggle('active');
         burgerNavMenu.classList.toggle('active');
         burgerNavMenu.classList.toggle('hide');
+        document.querySelector('.logo-mobile').classList.toggle('active');
         document.querySelector('body').classList.toggle('noscroll');
         document.querySelector('.overlay').classList.toggle('hiden');
     }
@@ -256,7 +260,7 @@ function closeBurgerMenu(event) {
 const petCardForModal = document.querySelector('.pets__card_conteiner').addEventListener('click', clickPetCard);
 
 function clickPetCard(event) {
-    if (!event.target.classList.contains('pets__card_conteiner')){
+    if (!event.target.classList.contains('pets__card_conteiner')) {
         createModalWindows(petsData.filter(elem => elem.name == event.path[1].querySelector('p').innerHTML));
     }
 }
@@ -266,13 +270,13 @@ function createModalWindows(pet) {
     modalWindowDomElement.classList.add('overlay__modal');
     document.querySelector('.footer').append(modalWindowDomElement);
     document.querySelector('body').classList.toggle('noscroll');
-    modalWindowDomElement.append(new PetsCard(pet[0]).petsModalWindow()) 
+    modalWindowDomElement.append(new PetsCard(pet[0]).petsModalWindow())
     document.querySelector('.overlay__modal').addEventListener('click', closeModalWindows)
 }
 
-function closeModalWindows(event){
-    if (event.target.classList.contains('overlay__modal') || event.target.classList.contains('modal__close-btn')){
-        document.querySelector('body').classList.toggle('noscroll');   
+function closeModalWindows(event) {
+    if (event.target.classList.contains('overlay__modal') || event.target.classList.contains('modal__close-btn')) {
+        document.querySelector('body').classList.toggle('noscroll');
         document.querySelector('.overlay__modal').remove();
     }
 
