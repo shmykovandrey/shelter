@@ -106,16 +106,16 @@
   height: 100%;
 }
 
-.pets_name {
+.pets__name {
+  padding-top: 25px;
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 2.0rem;
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.06em;
-  color: #545454;
-  margin-top: 30px;
+  padding-bottom: 30px;
 }
 
 .pets_learn_more {
@@ -127,6 +127,49 @@
   text-align: center;
   margin-top: 30px;
   background-color: #fff;
+}
+
+.pets__button_standart {
+  margin-bottom: 30px;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  background-color: #fff;
+  border: 2px solid #F1CDB3;
+  box-sizing: border-box;
+  border-radius: 100px;
+
+}
+
+.pets__button {
+  display: block;
+  margin: 60px auto 0px;
+
+  @include media-mobile {
+    margin-top: 41px;
+  }
+}
+
+.pets__btn {
+  font-size: 2rem;
+
+  @include media-mobile {
+    order: 2;
+    margin: 22px 0px 0px 42px;
+
+    &:last-child {
+      margin: 22px 58px 0px 0px;
+    }
+  }
+
+  &:hover {
+    background-color: #FDDCC4;
+    cursor: pointer;
+  }
 }
 
 .pets_learn_more_btn {
