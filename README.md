@@ -1,9 +1,6 @@
-# shmykovandrey-JSFE2022Q1
-Private repository for @shmykovandrey
+Shelter:
 
-shelter link: https://rolling-scopes-school.github.io/shmykovandrey-JSFE2022Q1/shelter/pages/main/index.html
+Цель задания сверстать сайт с макета Figma(пиксель перфект). Создать семантическую структуру. Использовать SASS/SCSS. Добавить адаптивность и отзывчивость. Использовать JS для слайдера, модальных окон и псевдорандомной генерации контента.
 
-my telegram: @feomatar4eg
-
-my discord: Feomatar4eg (@shmykovandrey)
+[Demo](https://shmykovandrey.github.io/shelter/shelter/pages/main/)
 

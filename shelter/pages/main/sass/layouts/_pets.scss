@@ -1,223 +1,263 @@
-.pets_h3{
-    padding-top: 79px;
-    text-align: center;
-    @include media-mobile{
-        margin-top: 43px;
-        padding-top: 43px;
-    }
-    
-}
-.pets__slider{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 60px;
-    @include media-mobile{
-        flex-wrap: wrap;
-    }
-    @include media-mobile{
-        padding-top: 43px;
-        padding-left: 16px;
-    }
+.pets_h3 {
+  padding-top: 79px;
+  text-align: center;
+
+  @include media-mobile {
+    margin-top: 43px;
+    padding-top: 43px;
+  }
+
 }
 
-.pets__cards{
+.pets__slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 60px;
 
-    display: flex;
-    justify-content: space-between;
+  @include media-mobile {
     flex-wrap: wrap;
-    align-items: flex-start;
-    text-align: center;
-    gap: 8.8rem;
-    @include media-laptop{
-        gap: 4rem;
-    }
-    @include media-mobile{
-    }
+  }
+
+  @include media-mobile {
+    padding-top: 43px;
+    padding-left: 16px;
+  }
 }
 
-.pets__card{
-    background-color: $color_backgroundLight;
-    min-width: 270px;
-    &:hover{
-        cursor: pointer;
-        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-    }
+.pets__cards {
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  text-align: center;
+  gap: 8.8rem;
+
+  @include media-laptop {
+    gap: 4rem;
+  }
+
+  @include media-mobile {}
 }
-.pets__card:hover .pets__button_standart{
+
+.pets__card {
+  background-color: $color_backgroundLight;
+  min-width: 270px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+}
+
+.pets__card:hover .pets__button_standart {
+  background-color: #FDDCC4;
+}
+
+.pets__name {
+  padding-top: 25px;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.0rem;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.06em;
+  padding-bottom: 30px;
+}
+
+.pets__button_standart {
+  margin-bottom: 30px;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  background-color: #fff;
+  border: 2px solid #F1CDB3;
+  box-sizing: border-box;
+  border-radius: 100px;
+
+}
+
+.pets__button {
+  display: block;
+  margin: 60px auto 0px;
+
+  @include media-mobile {
+    margin-top: 41px;
+  }
+}
+
+.pets__btn {
+  font-size: 2rem;
+
+  @include media-mobile {
+    order: 2;
+    margin: 22px 0px 0px 42px;
+
+    &:last-child {
+      margin: 22px 58px 0px 0px;
+    }
+  }
+
+  &:hover {
     background-color: #FDDCC4;
+    cursor: pointer;
+  }
 }
 
-.pets__name{
-    padding-top: 25px;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2.0rem;
-    line-height: 23px;
-    text-align: center;
-    letter-spacing: 0.06em;
-    padding-bottom: 30px;
-}
-.pets__button_standart{
-    margin-bottom: 30px;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.7rem;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    color: #292929;
-    background-color: #fff;
-    border: 2px solid #F1CDB3;
-    box-sizing: border-box;
-    border-radius: 100px;
-    
-}
-.pets__button{
-    display: block;
-    margin: 60px auto 0px;
-    @include media-mobile{
-        margin-top: 41px;
-    }
-}
-.pets__btn{
-    font-size:2rem;
-    @include media-mobile{
-        order:2;
-        margin: 22px 0px 0px 42px;
-        &:last-child{
-            margin: 22px 58px 0px 0px;
-        }
-    }
-    &:hover{
-        background-color: #FDDCC4;
-        cursor: pointer;
-    }
+.carousel-wrapper {
+  margin: 0 auto;
+  width: 990px;
+  overflow: hidden;
+
+  @include media-laptop {
+    width: 580px;
+  }
+
+  @include media-mobile {
+    width: 270px;
+  }
 }
 
-.carousel-wrapper{
-    margin: 0 auto;
-    width: 990px;
-    overflow: hidden;
-    @include media-laptop{
-        width: 580px;
-    }
-    @include media-mobile{
-        width: 270px;
-    }
-}
-.carousel{ 
-    position: relative;
-    left: -1080px;
-    margin: 0 auto;
-    display: flex;
-    @include media-laptop{
-        left: -620px;
-    }
-    @include media-mobile{
-        left: -270px;
-    }
+.carousel {
+  position: relative;
+  left: -1080px;
+  margin: 0 auto;
+  display: flex;
 
-}
-.carousel-next-animation{
-    animation-duration: 1.5s;
-    animation-name: slider;
-    @include media-laptop{
-        animation-name: slider-laptop;  
-        animation-duration: 1s; 
-    }
-    @include media-mobile{
-        animation-duration: 0.5s;
-        animation-name: slider-mobile;  
-    }
-}
-.carousel-prev-animation{
-    animation-duration: 1.5s;
-    animation-name: slider-prev;
-    @include media-laptop{
-        animation-name: slider-prev-laptop;
-        animation-duration: 1s;  
-    }
-    @include media-mobile{
-        animation-duration: 0.5s;
-        animation-name: slider-prev-mobile;  
-    }
-}
-.carousel-prev, .carousel-center, .carousel-next{
-    text-align: center;
-    display: flex;
-    gap: 90px;
-    @include media-laptop{
-        gap: 40px;
-    }
-    @include media-mobile{
-        gap: 0px
-    }
+  @include media-laptop {
+    left: -620px;
+  }
+
+  @include media-mobile {
+    left: -270px;
+  }
 
 }
 
-.carousel-center{
-    margin: 0px 90px;
-    @include media-laptop{
-        margin: 0px 40px;
-    }
-    @include media-mobile{
-        margin: 0px 0px;
-    }
+.carousel-next-animation {
+  animation-duration: 1.5s;
+  animation-name: slider;
+
+  @include media-laptop {
+    animation-name: slider-laptop;
+    animation-duration: 1s;
+  }
+
+  @include media-mobile {
+    animation-duration: 0.5s;
+    animation-name: slider-mobile;
+  }
+}
+
+.carousel-prev-animation {
+  animation-duration: 1.5s;
+  animation-name: slider-prev;
+
+  @include media-laptop {
+    animation-name: slider-prev-laptop;
+    animation-duration: 1s;
+  }
+
+  @include media-mobile {
+    animation-duration: 0.5s;
+    animation-name: slider-prev-mobile;
+  }
+}
+
+.carousel-prev,
+.carousel-center,
+.carousel-next {
+  text-align: center;
+  display: flex;
+  gap: 90px;
+
+  @include media-laptop {
+    gap: 40px;
+  }
+
+  @include media-mobile {
+    gap: 0px
+  }
+
+}
+
+.carousel-center {
+  margin: 0px 90px;
+
+  @include media-laptop {
+    margin: 0px 40px;
+  }
+
+  @include media-mobile {
+    margin: 0px 0px;
+  }
 }
 
 @keyframes slider {
-    from{
-        margin-left: 0px;
-    }
-    to{
-        margin-left: -1080px;
-    }    
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: -1080px;
+  }
 }
 
 @keyframes slider-prev {
-    from{
-        margin-left: 0px;
-    }
-    to{
-        margin-left: 1080px;
-    }
-    
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: 1080px;
+  }
+
 }
+
 @keyframes slider-laptop {
-    from{
-        margin-left: 0px;
-    }
-    to{
-        margin-left: -620px;
-    }    
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: -620px;
+  }
 }
 
 @keyframes slider-prev-laptop {
-    from{
-        margin-left: 0px;
-    }
-    to{
-        margin-left: 620px;
-    }
-    
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: 620px;
+  }
+
 }
+
 @keyframes slider-mobile {
-    from{
-        margin-left: 0px;
-    }
-    to{
-        margin-left: -270px;
-    }    
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: -270px;
+  }
 }
 
 @keyframes slider-prev-mobile {
-    from{
-        margin-left: 0px;
-    }
-    to{
-        margin-left: 270px;
-    }
-    
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: 270px;
+  }
+
 }
