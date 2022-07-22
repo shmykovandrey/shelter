@@ -1,7 +1,11 @@
-@mixin media-laptop{
-    @media (max-width:1279px){@content;}
+@mixin media-laptop {
+  @media (max-width:1279px) {
+    @content;
+  }
 }
 
-@mixin media-mobile{
-    @media (max-width:767px) {@content;}
+@mixin media-mobile {
+  @media (max-width:767px) {
+    @content;
+  }
 }

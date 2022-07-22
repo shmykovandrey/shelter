@@ -1,218 +1,251 @@
-.header{
-    position: fixed;
-    z-index:1;
-    top: 0px;
-    left: 0px;
+.header {
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 120px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+
+  @include media-laptop {
+    max-width: 1280px;
     width: 100%;
-    height: 120px;
-    background-color: #fff;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: 30px;
-    @include media-laptop{
-        max-width: 1280px;
-        width: 100%;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    @include media-mobile{
-        max-width: 768;
-        width: 100%;
-    }
-}
-.wrapper__pets-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+    align-items: flex-start;
+  }
+
+  @include media-mobile {
+    max-width: 768;
+    width: 100%;
+  }
 }
 
-.logo{
-    position: relative;
-    z-index: 1;
+.wrapper__pets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.logo {
+  position: relative;
+  z-index: 1;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media-laptop {
     padding-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    @include media-laptop{
-        padding-top: 30px;
-    }
+  }
 }
 
-.logo__subText{
-    padding-top: 10px;
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 15px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.1em;
-    color: #292929;
-}
-.main-nav{
-    margin-top: 40px;
-    padding-top: 27px;
-    max-width: 446px;
-    height: 100%;
-    @include media-laptop{
-        padding-top: 46px;
-        margin-top: 0px;
-    }
-    @include media-mobile{
-        display: none;
-    }
+.logo__subText {
+  padding-top: 10px;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  color: #292929;
 }
 
-.main-nav__items{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap:3.6rem;
-}
+.main-nav {
+  margin-top: 40px;
+  padding-top: 27px;
+  max-width: 446px;
+  height: 100%;
 
-.main-nav_link{
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 160%;
-    letter-spacing: 0;
-    color: #545454;
-    white-space: nowrap;
-    &:hover{
-        color: #292929;
-    }
-}
+  @include media-laptop {
+    padding-top: 46px;
+    margin-top: 0px;
+  }
 
-.main-nav_link_default{
-    color: #292929;
-    border-bottom: solid $color_btnPrimary;
-    padding-bottom: 4px;
-}
-.header__burger-icon{
+  @include media-mobile {
     display: none;
-    @include media-mobile{
-        display: block;
-        position: fixed;
-        top: 48px;
-        right: 25px;
-        width: 30px;
-        height: 22px;
-        z-index: 20;
-        & span,& span:before,& span:after {
-            content: '';
-            position: absolute;
-            background-color: #000;
-            left: 0px;
-            width: 100%;
-            height: 2px;
-            
-        }
-        & span:before{
-            top: 10px;
-        }
-        & span:after{
-            bottom: 10px;
-        }
-        & span{
-            top:10px
-        }
-        &.active span {
-            transform: rotate(90deg);
-            transition: transform 0.5s;
-        }
-        & span{
-            transform: rotate(0deg);
-            transition: transform 0.5s;
-        }
-    }
+  }
 }
-@keyframes slide-in{
-    from {
-        margin-right: -320px;
-    }
-    to {
-        margin-right: 0px;
+
+.main-nav__items {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3.6rem;
+}
+
+.main-nav_link {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 160%;
+  letter-spacing: 0;
+  color: #545454;
+  white-space: nowrap;
+
+  &:hover {
+    color: #292929;
+  }
+}
+
+.main-nav_link_default {
+  color: #292929;
+  border-bottom: solid $color_btnPrimary;
+  padding-bottom: 4px;
+}
+
+.header__burger-icon {
+  display: none;
+
+  @include media-mobile {
+    display: block;
+    position: fixed;
+    top: 48px;
+    right: 25px;
+    width: 30px;
+    height: 22px;
+    z-index: 20;
+
+    & span,
+    & span:before,
+    & span:after {
+      content: '';
+      position: absolute;
+      background-color: #000;
+      left: 0px;
+      width: 100%;
+      height: 2px;
+
     }
 
-}
-@keyframes slide-out{
-    from {
-        margin-right: 0px;
-    }
-    to {
-        margin-right: -320px;
+    & span:before {
+      top: 10px;
     }
 
+    & span:after {
+      bottom: 10px;
+    }
+
+    & span {
+      top: 10px
+    }
+
+    &.active span {
+      transform: rotate(90deg);
+      transition: transform 0.5s;
+    }
+
+    & span {
+      transform: rotate(0deg);
+      transition: transform 0.5s;
+    }
+  }
 }
-.burger-nav__items{
+
+@keyframes slide-in {
+  from {
     margin-right: -320px;
-    z-index: 10;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    padding-top: 250px;
-    right: 0px;
-    top: 0px;
-    background: #FFFFFF;
-    width: 320px;
-    max-width: 100%;
-    height: 100%;
-    .burger__menu-link{
-        color: #545454;
-        font-family: 'Arial';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 3.2rem;
-        line-height: 160%;
-        &:hover{
-            color: #292929;
-        }
-    }
-    .burger-nav__item{
-        margin-bottom: 40px;
-    }   
-    &.hide{
-        animation-duration: 1s;
-        animation-name: slide-out;
-    }
-    &.active{
-        margin-right: 0px;
-        animation-duration: 1s;
-        animation-name: slide-in;
-    }
-    &.start{
-        display: none;
-    }
+  }
+
+  to {
+    margin-right: 0px;
+  }
+
 }
-.overlay{
-    position: fixed;
-    z-index: 5;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background: rgba(41, 41, 41, 0.6);
-    &.hiden{
-        display:none;
-    }
+
+@keyframes slide-out {
+  from {
+    margin-right: 0px;
+  }
+
+  to {
+    margin-right: -320px;
+  }
+
 }
-.logo-mobile{
+
+.burger-nav__items {
+  margin-right: -320px;
+  z-index: 10;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top: 250px;
+  right: 0px;
+  top: 0px;
+  background: #FFFFFF;
+  width: 320px;
+  max-width: 100%;
+  height: 100%;
+
+  .burger__menu-link {
+    color: #545454;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 160%;
+
+    &:hover {
+      color: #292929;
+    }
+  }
+
+  .burger-nav__item {
+    margin-bottom: 40px;
+  }
+
+  &.hide {
+    animation-duration: 1s;
+    animation-name: slide-out;
+  }
+
+  &.active {
+    margin-right: 0px;
+    animation-duration: 1s;
+    animation-name: slide-in;
+  }
+
+  &.start {
     display: none;
-    &.active{
-        display: block;
-        position: fixed;
-        top: 0px;
-        right: 100px;
-        animation-duration: 1s;
-        animation-name: slide-in;
-    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  z-index: 5;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 41, 41, 0.6);
+
+  &.hiden {
+    display: none;
+  }
+}
+
+.logo-mobile {
+  display: none;
+
+  &.active {
+    display: block;
+    position: fixed;
+    top: 0px;
+    right: 100px;
+    animation-duration: 1s;
+    animation-name: slide-in;
+  }
 }

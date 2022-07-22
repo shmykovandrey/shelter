@@ -1,48 +1,55 @@
-.pets__content{
+.pets__content {
   max-width: 1200px;
   height: 100%;
   padding: 200px 0px 70px 0px;
   background-color: #F6F6F6;
-  @include media-mobile{
-      padding-top: 160px;
-      padding-bottom: 40px;
+
+  @include media-mobile {
+    padding-top: 160px;
+    padding-bottom: 40px;
   }
 
 }
 
-.pets__header{
+.pets__header {
   max-width: 400px;
   height: 100%;
   margin: 0 auto;
   text-align: center;
 
 }
+
 @keyframes fade {
-  from{
+  from {
     opacity: 0%;
   }
-  to{
+
+  to {
     opacity: 100%;
   }
 }
-.pets__card_conteiner{
+
+.pets__card_conteiner {
   max-width: 1200px;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 60px;
-  @include media-laptop{
-      justify-content: space-evenly;
-      margin-top: 30px;
-      padding-left: 20px;
-      padding-right: 20px;
+
+  @include media-laptop {
+    justify-content: space-evenly;
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  @include media-mobile{
-      margin-top: 42px;
+
+  @include media-mobile {
+    margin-top: 42px;
   }
 }
-.pets__card{
+
+.pets__card {
   animation-duration: 2.5s;
   animation-name: fade;
   max-width: 270px;
@@ -53,42 +60,53 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include media-laptop{
-      &:nth-child(8){
-          display: none;
-      }
-      &:nth-child(7){
-          display: none;
-      }
-  }
-  @include media-mobile{
+
+  @include media-laptop {
+    &:nth-child(8) {
       display: none;
-      &:nth-child(1){
-          display: flex;
-      }
-      &:nth-child(2){
-          display: flex;
-      }
-      &:nth-child(3){
-          display: flex;
-      }
+    }
+
+    &:nth-child(7) {
+      display: none;
+    }
+  }
+
+  @include media-mobile {
+    display: none;
+
+    &:nth-child(1) {
+      display: flex;
+    }
+
+    &:nth-child(2) {
+      display: flex;
+    }
+
+    &:nth-child(3) {
+      display: flex;
+    }
   }
 }
-.pets__card:hover{
-    cursor: pointer;
-    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+
+.pets__card:hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
-.pets__card:hover .pets_learn_more{
+
+.pets__card:hover .pets_learn_more {
   background-color: #FDDCC4;
 }
-.pets_learn_more:hover{
+
+.pets_learn_more:hover {
   cursor: pointer;
 }
-.pets_image{
+
+.pets_image {
   max-width: 270px;
   height: 100%;
 }
-.pets_name{
+
+.pets_name {
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;
@@ -99,7 +117,8 @@
   color: #545454;
   margin-top: 30px;
 }
-.pets_learn_more{
+
+.pets_learn_more {
   width: 187px;
   height: 52px;
   border: 2px solid #F1CDB3;
@@ -109,7 +128,8 @@
   margin-top: 30px;
   background-color: #fff;
 }
-.pets_learn_more_btn{
+
+.pets_learn_more_btn {
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;
@@ -119,18 +139,20 @@
   color: #292929;
   text-decoration: none;
 }
-.pets_pagination{
+
+.pets_pagination {
   max-width: 340px;
   height: 100%;
   margin: 30px auto;
   display: flex;
   justify-content: space-between;
-  @include media-laptop{
-      margin: 11px auto 5px;
+
+  @include media-laptop {
+    margin: 11px auto 5px;
   }
 }
 
-.pets_pagination_btn{
+.pets_pagination_btn {
   width: 52px;
   height: 52px;
   border-radius: 100px;
@@ -146,18 +168,22 @@
   color: #292929;
   text-decoration: none;
 }
+
 .enable:hover {
   cursor: pointer;
   background-color: #F1CDB3;
 }
-.disable{
+
+.disable {
   border: 2px solid #CDCDCD;
 }
-.pets_pagination_btn:disabled .pets_pag_link{
-   pointer-events: none;
-   cursor: default;
+
+.pets_pagination_btn:disabled .pets_pag_link {
+  pointer-events: none;
+  cursor: default;
 }
-.is_page{
+
+.is_page {
   width: 52px;
   height: 52px;
   border-radius: 100px;
@@ -168,7 +194,8 @@
   border: 2px solid #F1CDB3;
   background-color: #F1CDB3;
 }
-.pets_pag_link{
+
+.pets_pag_link {
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;
@@ -177,11 +204,12 @@
   letter-spacing: 0.06em;
   color: #292929;
   text-decoration: none;
-     pointer-events: none;
-   cursor: default;
+  pointer-events: none;
+  cursor: default;
 
 }
-.pets_learn_more{
+
+.pets_learn_more {
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;
